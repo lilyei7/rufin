@@ -129,91 +129,91 @@ export default function QuotesManagerPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="flex items-center justify-center min-h-screen bg-[#121313]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando cotizaciones...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#EAB839] border-t-transparent mx-auto mb-4"></div>
+          <p className="text-gray-400">Cargando cotizaciones...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-[#121313]">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">📋 Gestión de Cotizaciones</h1>
-          <p className="text-gray-600">Administra, publica y monitorea tus cotizaciones</p>
+        <div className="mb-8 border-b border-[#EAB839]/20 pb-6">
+          <h1 className="text-4xl font-black text-white mb-2">📋 Gestor de Cotizaciones</h1>
+          <p className="text-gray-400">Administra, publica y monitorea tus cotizaciones de forma rápida</p>
         </div>
 
         {/* Estadísticas */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-500 text-sm uppercase">Total</p>
-            <p className="text-3xl font-bold text-gray-900">{stats.total}</p>
+          <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg p-4">
+            <p className="text-gray-400 text-xs uppercase">Total</p>
+            <p className="text-3xl font-black text-[#EAB839] mt-2">{stats.total}</p>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-500 text-sm uppercase">Borradores</p>
-            <p className="text-3xl font-bold text-yellow-600">{stats.draft}</p>
+          <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg p-4">
+            <p className="text-gray-400 text-xs uppercase">Borradores</p>
+            <p className="text-3xl font-black text-yellow-500 mt-2">{stats.draft}</p>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-500 text-sm uppercase">Publicadas</p>
-            <p className="text-3xl font-bold text-blue-600">{stats.published}</p>
+          <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg p-4">
+            <p className="text-gray-400 text-xs uppercase">Publicadas</p>
+            <p className="text-3xl font-black text-blue-500 mt-2">{stats.published}</p>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-gray-500 text-sm uppercase">Aceptadas</p>
-            <p className="text-3xl font-bold text-green-600">{stats.accepted}</p>
+          <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg p-4">
+            <p className="text-gray-400 text-xs uppercase">Aceptadas</p>
+            <p className="text-3xl font-black text-green-500 mt-2">{stats.accepted}</p>
           </div>
         </div>
 
-        {/* Filtros */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        {/* Filtros y botón */}
+        <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg p-6 mb-8 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               <button
                 onClick={() => setFilterStatus('all')}
-                className={`px-4 py-2 rounded-lg font-medium transition ${
+                className={`px-4 py-2 rounded-lg font-semibold transition ${
                   filterStatus === 'all'
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                    ? 'bg-[#EAB839] text-[#121313]'
+                    : 'bg-white/10 text-gray-300 border border-[#EAB839]/30 hover:border-[#EAB839]/60'
                 }`}
               >
                 Todas
               </button>
               <button
                 onClick={() => setFilterStatus('draft')}
-                className={`px-4 py-2 rounded-lg font-medium transition ${
+                className={`px-4 py-2 rounded-lg font-semibold transition ${
                   filterStatus === 'draft'
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                    ? 'bg-[#EAB839] text-[#121313]'
+                    : 'bg-white/10 text-gray-300 border border-[#EAB839]/30 hover:border-[#EAB839]/60'
                 }`}
               >
                 Borradores
               </button>
               <button
                 onClick={() => setFilterStatus('published')}
-                className={`px-4 py-2 rounded-lg font-medium transition ${
+                className={`px-4 py-2 rounded-lg font-semibold transition ${
                   filterStatus === 'published'
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                    ? 'bg-[#EAB839] text-[#121313]'
+                    : 'bg-white/10 text-gray-300 border border-[#EAB839]/30 hover:border-[#EAB839]/60'
                 }`}
               >
                 Publicadas
               </button>
               <button
                 onClick={() => setFilterStatus('accepted')}
-                className={`px-4 py-2 rounded-lg font-medium transition ${
+                className={`px-4 py-2 rounded-lg font-semibold transition ${
                   filterStatus === 'accepted'
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                    ? 'bg-[#EAB839] text-[#121313]'
+                    : 'bg-white/10 text-gray-300 border border-[#EAB839]/30 hover:border-[#EAB839]/60'
                 }`}
               >
                 Aceptadas
               </button>
             </div>
             <Link href="/dashboard/my-quotes">
-              <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 font-medium">
+              <button className="bg-gradient-to-r from-[#EAB839] to-yellow-500 text-[#121313] px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-[#EAB839]/30 font-bold transition">
                 ➕ Nueva Cotización
               </button>
             </Link>
@@ -222,43 +222,43 @@ export default function QuotesManagerPage() {
 
         {/* Tabla de cotizaciones */}
         {filteredQuotes.length === 0 ? (
-          <div className="bg-white rounded-lg shadow p-12 text-center">
-            <p className="text-gray-500 text-lg mb-4">No hay cotizaciones en este estado</p>
+          <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg p-12 text-center backdrop-blur-sm">
+            <p className="text-gray-400 text-lg mb-4">No hay cotizaciones en este estado</p>
             <Link href="/dashboard/my-quotes">
-              <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
+              <button className="bg-[#EAB839] text-[#121313] px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-[#EAB839]/30 font-bold">
                 Crear primera cotización
               </button>
             </Link>
           </div>
         ) : (
-          <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="bg-white/5 border border-[#EAB839]/20 rounded-lg overflow-hidden backdrop-blur-sm">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-[#1a1a1a] border-b border-[#EAB839]/20">
                 <tr>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Número</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Cliente</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Total</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Estado</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Productos</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Acciones</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-[#EAB839]">Número</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-[#EAB839]">Cliente</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-[#EAB839]">Total</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-[#EAB839]">Estado</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-[#EAB839]">Productos</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-[#EAB839]">Acciones</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-[#EAB839]/10">
                 {filteredQuotes.map(quote => (
-                  <tr key={quote.id} className="hover:bg-gray-50 transition">
-                    <td className="px-6 py-4 text-sm font-medium text-indigo-600">{quote.quoteNumber}</td>
-                    <td className="px-6 py-4 text-sm text-gray-900">{quote.clientName}</td>
-                    <td className="px-6 py-4 text-sm font-semibold text-gray-900">${quote.totalCost.toFixed(2)}</td>
+                  <tr key={quote.id} className="hover:bg-[#1a1a1a] transition">
+                    <td className="px-6 py-4 text-sm font-bold text-[#EAB839]">{quote.quoteNumber}</td>
+                    <td className="px-6 py-4 text-sm text-white">{quote.clientName}</td>
+                    <td className="px-6 py-4 text-sm font-bold text-white">${quote.totalCost.toFixed(2)}</td>
                     <td className="px-6 py-4 text-sm">
                       <select
                         value={quote.status}
                         onChange={(e) => handleStatusChange(quote.id, e.target.value)}
-                        className={`px-3 py-1 rounded-full text-sm font-medium cursor-pointer ${
+                        className={`px-3 py-1 rounded-lg text-sm font-bold cursor-pointer border transition ${
                           quote.status === 'draft'
-                            ? 'bg-yellow-100 text-yellow-800'
+                            ? 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400'
                             : quote.status === 'published'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-green-100 text-green-800'
+                            ? 'bg-blue-500/20 border-blue-500/30 text-blue-400'
+                            : 'bg-green-500/20 border-green-500/30 text-green-400'
                         }`}
                       >
                         <option value="draft">Borrador</option>
@@ -266,14 +266,14 @@ export default function QuotesManagerPage() {
                         <option value="accepted">Aceptada</option>
                       </select>
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600">
+                    <td className="px-6 py-4 text-sm text-gray-400">
                       {quote.items ? quote.items.length : 0} items
                     </td>
-                    <td className="px-6 py-4 text-sm space-x-2">
+                    <td className="px-6 py-4 text-sm space-x-3">
                       {quote.status === 'published' && (
                         <button
                           onClick={() => copyToClipboard(quote.quoteToken)}
-                          className="text-blue-600 hover:text-blue-800 font-medium"
+                          className="text-[#EAB839] hover:text-yellow-500 font-bold transition"
                           title="Copiar link de cotización"
                         >
                           🔗 Link
@@ -281,7 +281,7 @@ export default function QuotesManagerPage() {
                       )}
                       <button
                         onClick={() => handleDeleteQuote(quote.id)}
-                        className="text-red-600 hover:text-red-800 font-medium"
+                        className="text-red-500 hover:text-red-400 font-bold transition"
                       >
                         🗑️ Eliminar
                       </button>
