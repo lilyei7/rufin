@@ -1,0 +1,3491 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "ROOFING",
+      "description": "Sistemas de techumbre",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 2,
+      "name": "SIDING",
+      "description": "Recubrimientos de fachada",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 3,
+      "name": "GUTTERS",
+      "description": "Sistemas de drenaje",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 4,
+      "name": "Roofing Shingles",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "EPDM Rubber Roofing",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "TPO Roofing",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 7,
+      "name": "Norandex Vinyl",
+      "type": "sub",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 8,
+      "name": "James Hardy",
+      "type": "sub",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 9,
+      "name": "5K",
+      "type": "sub",
+      "parentCategoryId": 3
+    },
+    {
+      "id": 10,
+      "name": "6K",
+      "type": "sub",
+      "parentCategoryId": 3
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "ASPHALT SHINGLES",
+      "categoryId": 4,
+      "unitPrice": 50,
+      "unitType": "bundle"
+    },
+    {
+      "id": 2,
+      "name": "REEMPLAZO DE BOOTS",
+      "categoryId": 4,
+      "unitPrice": 25,
+      "unitType": "unit"
+    },
+    {
+      "id": 3,
+      "name": "DRIP EDGE FLASHING",
+      "categoryId": 4,
+      "unitPrice": 8.75,
+      "unitType": "ft"
+    },
+    {
+      "id": 4,
+      "name": "FLASHING CHIMENEA-CHICA",
+      "categoryId": 4,
+      "unitPrice": 85,
+      "unitType": "unit"
+    },
+    {
+      "id": 5,
+      "name": "FLASHING CHIMENEA-MEDIANA",
+      "categoryId": 4,
+      "unitPrice": 125,
+      "unitType": "unit"
+    },
+    {
+      "id": 6,
+      "name": "FLASHING CHIMENEA-GRANDE",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "unit"
+    },
+    {
+      "id": 7,
+      "name": "PEEL AND STICK ROOF LEAK BARRIER",
+      "categoryId": 4,
+      "unitPrice": 65,
+      "unitType": "roll"
+    },
+    {
+      "id": 8,
+      "name": "SYNTHETIC ROOFING UNDERLAYMENT",
+      "categoryId": 4,
+      "unitPrice": 35.5,
+      "unitType": "roll"
+    },
+    {
+      "id": 9,
+      "name": "COIL ROOFING NAILS",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "coil"
+    },
+    {
+      "id": 10,
+      "name": "PLASTIC CAP ROOFING NAILS",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "box"
+    },
+    {
+      "id": 11,
+      "name": "EPDM .60 10X100",
+      "categoryId": 5,
+      "unitPrice": 1200,
+      "unitType": "roll"
+    },
+    {
+      "id": 12,
+      "name": "INSOLATION 1\"",
+      "categoryId": 5,
+      "unitPrice": 30,
+      "unitType": "sheet"
+    },
+    {
+      "id": 13,
+      "name": "INSOLATION 2\"",
+      "categoryId": 5,
+      "unitPrice": 45,
+      "unitType": "sheet"
+    },
+    {
+      "id": 14,
+      "name": "FLASHING 12IN X 50 FT",
+      "categoryId": 5,
+      "unitPrice": 420,
+      "unitType": "roll"
+    },
+    {
+      "id": 15,
+      "name": "CORNERS",
+      "categoryId": 5,
+      "unitPrice": 20,
+      "unitType": "unit"
+    },
+    {
+      "id": 16,
+      "name": "JOINT COVER",
+      "categoryId": 5,
+      "unitPrice": 350,
+      "unitType": "roll"
+    },
+    {
+      "id": 17,
+      "name": "METAL BAR 10FT",
+      "categoryId": 5,
+      "unitPrice": 13,
+      "unitType": "bar"
+    },
+    {
+      "id": 18,
+      "name": "PIPE BOOTS",
+      "categoryId": 5,
+      "unitPrice": 79,
+      "unitType": "unit"
+    },
+    {
+      "id": 19,
+      "name": "SCREWS BUCKET (1000)",
+      "categoryId": 5,
+      "unitPrice": 285,
+      "unitType": "bucket"
+    },
+    {
+      "id": 20,
+      "name": "GLUE BUCKET",
+      "categoryId": 5,
+      "unitPrice": 330,
+      "unitType": "bucket"
+    },
+    {
+      "id": 21,
+      "name": "PRIMER GALLON",
+      "categoryId": 5,
+      "unitPrice": 150,
+      "unitType": "gallon"
+    },
+    {
+      "id": 22,
+      "name": "TAPE 50 FT",
+      "categoryId": 5,
+      "unitPrice": 0,
+      "unitType": "roll"
+    },
+    {
+      "id": 23,
+      "name": "PLATES BUCKET",
+      "categoryId": 5,
+      "unitPrice": 210,
+      "unitType": "bucket"
+    },
+    {
+      "id": 24,
+      "name": "CAULKING",
+      "categoryId": 5,
+      "unitPrice": 17,
+      "unitType": "tube"
+    },
+    {
+      "id": 25,
+      "name": "HardieTrim NT3 - Outside/Inside Corner",
+      "categoryId": 8,
+      "unitPrice": 12.5,
+      "unitType": "piece",
+      "usage": "Recommended"
+    },
+    {
+      "id": 26,
+      "name": "HardieTrim NT3 - Windows",
+      "categoryId": 8,
+      "unitPrice": 18.75,
+      "unitType": "piece",
+      "usage": "Recommended"
+    },
+    {
+      "id": 27,
+      "name": "Flat Tabs",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Recommended",
+      "notes": "1 tab per linear ft, 1 box = 100 tabs"
+    },
+    {
+      "id": 28,
+      "name": "Corner Tabs",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Recommended",
+      "notes": "1 tab per 2 linear ft, 1 box = 50 tabs"
+    },
+    {
+      "id": 29,
+      "name": "Color Matching Caulking",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "tube",
+      "usage": "Required"
+    },
+    {
+      "id": 30,
+      "name": "ColorPlus Touch-Up Kit",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "kit",
+      "usage": "Required"
+    },
+    {
+      "id": 31,
+      "name": "ColorMatch Aluminum Coil",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "coil",
+      "usage": "Required"
+    },
+    {
+      "id": 32,
+      "name": "HardieWrap",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Recommended"
+    },
+    {
+      "id": 33,
+      "name": "Window Flashing",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Required"
+    },
+    {
+      "id": 34,
+      "name": "Seam Tape",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Required"
+    },
+    {
+      "id": 35,
+      "name": "Insulation Underlayment",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Recommended"
+    },
+    {
+      "id": 36,
+      "name": "Siding Gauges",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "set",
+      "usage": "Recommended"
+    },
+    {
+      "id": 37,
+      "name": "Galvanized Nails (stainless 1 mile from shore)",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 38,
+      "name": "Clipped Head Finish Trim Nails",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 39,
+      "name": "Crown Staples",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 40,
+      "name": "HardieBlade",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "blade",
+      "usage": "Required"
+    },
+    {
+      "id": 41,
+      "name": "Best Practice Manual",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "manual",
+      "usage": "Required"
+    },
+    {
+      "id": 42,
+      "name": "Tarp - To Cover Material on Site",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "tarp",
+      "usage": "Required"
+    },
+    {
+      "id": 43,
+      "name": "Wood Shims - Window Trim",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "pack",
+      "usage": "Recommended"
+    },
+    {
+      "id": 44,
+      "name": "SturdiBuild Mounting Blocks",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "block",
+      "usage": "Recommended"
+    }
+  ],
+  "projects": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Super Admin",
+      "username": "superadmin",
+      "email": "superadmin@example.com",
+      "role": "super_admin",
+      "password": "superadmin123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Admin User",
+      "username": "admin",
+      "email": "admin@example.com",
+      "role": "admin",
+      "password": "admin",
+      "createdAt": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "contracts": [],
+  "incidents": [],
+  "notifications": []
+}
+    {
+      "id": 2,
+      "name": "SIDING",
+      "description": "Recubrimientos de fachada",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 3,
+      "name": "GUTTERS",
+      "description": "Sistemas de drenaje",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 4,
+      "name": "Roofing Shingles",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "EPDM Rubber Roofing",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "TPO Roofing",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 7,
+      "name": "Norandex Vinyl",
+      "type": "sub",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 8,
+      "name": "James Hardy",
+      "type": "sub",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 9,
+      "name": "5K",
+      "type": "sub",
+      "parentCategoryId": 3
+    },
+    {
+      "id": 10,
+      "name": "6K",
+      "type": "sub",
+      "parentCategoryId": 3
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "ASPHALT SHINGLES",
+      "categoryId": 4,
+      "unitPrice": 50,
+      "unitType": "bundle"
+    },
+    {
+      "id": 2,
+      "name": "REEMPLAZO DE BOOTS",
+      "categoryId": 4,
+      "unitPrice": 25,
+      "unitType": "unit"
+    },
+    {
+      "id": 3,
+      "name": "DRIP EDGE FLASHING",
+      "categoryId": 4,
+      "unitPrice": 8.75,
+      "unitType": "ft"
+    },
+    {
+      "id": 4,
+      "name": "FLASHING CHIMENEA-CHICA",
+      "categoryId": 4,
+      "unitPrice": 85,
+      "unitType": "unit"
+    },
+    {
+      "id": 5,
+      "name": "FLASHING CHIMENEA-MEDIANA",
+      "categoryId": 4,
+      "unitPrice": 125,
+      "unitType": "unit"
+    },
+    {
+      "id": 6,
+      "name": "FLASHING CHIMENEA-GRANDE",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "unit"
+    },
+    {
+      "id": 7,
+      "name": "PEEL AND STICK ROOF LEAK BARRIER",
+      "categoryId": 4,
+      "unitPrice": 65,
+      "unitType": "roll"
+    },
+    {
+      "id": 8,
+      "name": "SYNTHETIC ROOFING UNDERLAYMENT",
+      "categoryId": 4,
+      "unitPrice": 35.5,
+      "unitType": "roll"
+    },
+    {
+      "id": 9,
+      "name": "COIL ROOFING NAILS",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "coil"
+    },
+    {
+      "id": 10,
+      "name": "PLASTIC CAP ROOFING NAILS",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "box"
+    },
+    {
+      "id": 11,
+      "name": "EPDM .60 10X100",
+      "categoryId": 5,
+      "unitPrice": 1200,
+      "unitType": "roll"
+    },
+    {
+      "id": 12,
+      "name": "INSOLATION 1\"",
+      "categoryId": 5,
+      "unitPrice": 30,
+      "unitType": "sheet"
+    },
+    {
+      "id": 13,
+      "name": "INSOLATION 2\"",
+      "categoryId": 5,
+      "unitPrice": 45,
+      "unitType": "sheet"
+    },
+    {
+      "id": 14,
+      "name": "FLASHING 12IN X 50 FT",
+      "categoryId": 5,
+      "unitPrice": 420,
+      "unitType": "roll"
+    },
+    {
+      "id": 15,
+      "name": "CORNERS",
+      "categoryId": 5,
+      "unitPrice": 20,
+      "unitType": "unit"
+    },
+    {
+      "id": 16,
+      "name": "JOINT COVER",
+      "categoryId": 5,
+      "unitPrice": 350,
+      "unitType": "roll"
+    },
+    {
+      "id": 17,
+      "name": "METAL BAR 10FT",
+      "categoryId": 5,
+      "unitPrice": 13,
+      "unitType": "bar"
+    },
+    {
+      "id": 18,
+      "name": "PIPE BOOTS",
+      "categoryId": 5,
+      "unitPrice": 79,
+      "unitType": "unit"
+    },
+    {
+      "id": 19,
+      "name": "SCREWS BUCKET (1000)",
+      "categoryId": 5,
+      "unitPrice": 285,
+      "unitType": "bucket"
+    },
+    {
+      "id": 20,
+      "name": "GLUE BUCKET",
+      "categoryId": 5,
+      "unitPrice": 330,
+      "unitType": "bucket"
+    },
+    {
+      "id": 21,
+      "name": "PRIMER GALLON",
+      "categoryId": 5,
+      "unitPrice": 150,
+      "unitType": "gallon"
+    },
+    {
+      "id": 22,
+      "name": "TAPE 50 FT",
+      "categoryId": 5,
+      "unitPrice": 0,
+      "unitType": "roll"
+    },
+    {
+      "id": 23,
+      "name": "PLATES BUCKET",
+      "categoryId": 5,
+      "unitPrice": 210,
+      "unitType": "bucket"
+    },
+    {
+      "id": 24,
+      "name": "CAULKING",
+      "categoryId": 5,
+      "unitPrice": 17,
+      "unitType": "tube"
+    },
+    {
+      "id": 25,
+      "name": "HardieTrim NT3 - Outside/Inside Corner",
+      "categoryId": 8,
+      "unitPrice": 12.5,
+      "unitType": "piece",
+      "usage": "Recommended"
+    },
+    {
+      "id": 26,
+      "name": "HardieTrim NT3 - Windows",
+      "categoryId": 8,
+      "unitPrice": 18.75,
+      "unitType": "piece",
+      "usage": "Recommended"
+    },
+    {
+      "id": 27,
+      "name": "Flat Tabs",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Recommended",
+      "notes": "1 tab per linear ft, 1 box = 100 tabs"
+    },
+    {
+      "id": 28,
+      "name": "Corner Tabs",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Recommended",
+      "notes": "1 tab per 2 linear ft, 1 box = 50 tabs"
+    },
+    {
+      "id": 29,
+      "name": "Color Matching Caulking",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "tube",
+      "usage": "Required"
+    },
+    {
+      "id": 30,
+      "name": "ColorPlus Touch-Up Kit",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "kit",
+      "usage": "Required"
+    },
+    {
+      "id": 31,
+      "name": "ColorMatch Aluminum Coil",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "coil",
+      "usage": "Required"
+    },
+    {
+      "id": 32,
+      "name": "HardieWrap",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Recommended"
+    },
+    {
+      "id": 33,
+      "name": "Window Flashing",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Required"
+    },
+    {
+      "id": 34,
+      "name": "Seam Tape",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Required"
+    },
+    {
+      "id": 35,
+      "name": "Insulation Underlayment",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Recommended"
+    },
+    {
+      "id": 36,
+      "name": "Siding Gauges",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "set",
+      "usage": "Recommended"
+    },
+    {
+      "id": 37,
+      "name": "Galvanized Nails (stainless 1 mile from shore)",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 38,
+      "name": "Clipped Head Finish Trim Nails",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 39,
+      "name": "Crown Staples",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 40,
+      "name": "HardieBlade",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "blade",
+      "usage": "Required"
+    },
+    {
+      "id": 41,
+      "name": "Best Practice Manual",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "manual",
+      "usage": "Required"
+    },
+    {
+      "id": 42,
+      "name": "Tarp - To Cover Material on Site",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "tarp",
+      "usage": "Required"
+    },
+    {
+      "id": 43,
+      "name": "Wood Shims - Window Trim",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "pack",
+      "usage": "Recommended"
+    },
+    {
+      "id": 44,
+      "name": "SturdiBuild Mounting Blocks",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "block",
+      "usage": "Recommended"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "INV-001 - John Johnson",
+      "clientName": "John Johnson",
+      "clientEmail": "john.johnson@email.com",
+      "systemId": 4,
+      "status": "approved",
+      "createdBy": "admin",
+      "createdAt": "2025-11-15T10:30:00Z",
+      "scheduledStart": "2024-12-20T09:00:00Z",
+      "scheduledEnd": "2024-12-20T17:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "installerStatus": "working",
+      "installerPayment": 0,
+      "installerPriceProposal": 800,
+      "installerPriceStatus": "pending",
+      "installerComments": "",
+      "priceProposalDate": "2024-12-19T10:00:00Z",
+      "installationDate": "2024-12-20T09:00:00Z",
+      "invoiceNumber": "INV-001",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 25,
+          "unitPrice": 45
+        },
+        {
+          "productId": 7,
+          "quantity": 3,
+          "unitPrice": 85
+        },
+        {
+          "productId": 8,
+          "quantity": 5,
+          "unitPrice": 120
+        }
+      ],
+      "totalCost": 1750,
+      "history": [
+        {
+          "timestamp": "2024-12-15T08:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado por departamento de compras"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "projectName": "INV-002 - María López",
+      "clientName": "María López",
+      "clientEmail": "maria.lopez@email.com",
+      "systemId": 5,
+      "status": "in-progress",
+      "createdBy": "vendedor1",
+      "createdAt": "2024-12-10T14:20:00Z",
+      "scheduledStart": "2024-12-21T08:00:00Z",
+      "scheduledEnd": "2024-12-22T16:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "installerStatus": "completed",
+      "installerPayment": 1500,
+      "installerPriceProposal": 1800,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Precio aceptado, materiales incluidos",
+      "priceProposalDate": "2024-12-20T14:00:00Z",
+      "installationDate": "2024-12-21T08:00:00Z",
+      "invoiceNumber": "INV-002",
+      "items": [
+        {
+          "productId": 11,
+          "quantity": 2,
+          "unitPrice": 1200
+        },
+        {
+          "productId": 14,
+          "quantity": 1,
+          "unitPrice": 420
+        },
+        {
+          "productId": 19,
+          "quantity": 3,
+          "unitPrice": 285
+        }
+      ],
+      "totalCost": 3495,
+      "history": [
+        {
+          "timestamp": "2024-12-12T10:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado"
+        },
+        {
+          "timestamp": "2024-12-21T08:30:00Z",
+          "status": "in-progress",
+          "comment": "Trabajo iniciado"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "projectName": "INV-003 - Roberto García",
+      "clientName": "Roberto García",
+      "clientEmail": "roberto.garcia@email.com",
+      "systemId": 8,
+      "status": "completed",
+      "createdBy": "vendedor2",
+      "createdAt": "2024-12-01T09:15:00Z",
+      "scheduledStart": "2024-12-18T07:00:00Z",
+      "scheduledEnd": "2024-12-19T15:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "invoiceNumber": "INV-003",
+      "items": [
+        {
+          "productId": 25,
+          "quantity": 10,
+          "unitPrice": 25
+        },
+        {
+          "productId": 26,
+          "quantity": 4,
+          "unitPrice": 35
+        },
+        {
+          "productId": 29,
+          "quantity": 6,
+          "unitPrice": 17
+        }
+      ],
+      "totalCost": 542,
+      "history": [
+        {
+          "timestamp": "2024-12-05T11:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado"
+        },
+        {
+          "timestamp": "2024-12-18T07:15:00Z",
+          "status": "in-progress",
+          "comment": "Trabajo iniciado"
+        },
+        {
+          "timestamp": "2024-12-19T15:30:00Z",
+          "status": "completed",
+          "comment": "Proyecto completado exitosamente"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "projectName": "INV-004 - Ana Martínez",
+      "clientName": "Ana Martínez",
+      "clientEmail": "ana.martinez@email.com",
+      "systemId": 9,
+      "status": "approved",
+      "createdBy": "admin",
+      "createdAt": "2024-12-16T16:45:00Z",
+      "scheduledStart": "2024-12-23T10:00:00Z",
+      "scheduledEnd": "2024-12-23T14:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "invoiceNumber": "INV-004",
+      "items": [
+        {
+          "productId": 9,
+          "quantity": 2,
+          "unitPrice": 15
+        }
+      ],
+      "totalCost": 30,
+      "history": [
+        {
+          "timestamp": "2024-12-17T09:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado para mantenimiento"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "projectName": "INV-005 - María González",
+      "clientName": "María González",
+      "clientEmail": "maria.gonzalez@email.com",
+      "clientPhone": "+56987654321",
+      "projectType": "Instalación Completa",
+      "description": "Instalación completa de sistema de seguridad en residencia principal",
+      "status": "assigned",
+      "createdBy": "Ana López",
+      "createdAt": "2024-12-15T08:00:00Z",
+      "scheduledStart": "2024-12-25T09:00:00Z",
+      "scheduledEnd": "2024-12-25T17:00:00Z",
+      "assignedInstaller": "Miguel Sánchez",
+      "installerStatus": "assigned",
+      "installerPayment": 0,
+      "installerPriceProposal": 180,
+      "installerPriceStatus": "pending",
+      "installerComments": "El precio propuesto de $180 incluye materiales premium y mano de obra especializada. La instalación requiere equipo adicional por la complejidad del sistema.",
+      "invoiceNumber": "INV-005",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "unitPrice": 120
+        },
+        {
+          "productId": 3,
+          "quantity": 2,
+          "unitPrice": 30
+        }
+      ],
+      "totalCost": 180,
+      "history": [
+        {
+          "timestamp": "2024-12-15T08:00:00Z",
+          "status": "created",
+          "comment": "Proyecto creado por Ana López"
+        },
+        {
+          "timestamp": "2024-12-16T10:30:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Miguel Sánchez"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "projectName": "INV-006 - Roberto Silva",
+      "clientName": "Roberto Silva",
+      "clientEmail": "roberto.silva@email.com",
+      "clientPhone": "+56911223344",
+      "projectType": "Mantenimiento",
+      "description": "Mantenimiento preventivo de sistema de alarmas existente",
+      "status": "working",
+      "createdBy": "Carlos Mendoza",
+      "createdAt": "2024-12-10T14:00:00Z",
+      "scheduledStart": "2024-12-20T08:00:00Z",
+      "scheduledEnd": "2024-12-20T12:00:00Z",
+      "assignedInstaller": "Miguel Sánchez",
+      "installerStatus": "working",
+      "installerPayment": 0,
+      "installerPriceProposal": 95,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Precio aceptado. El mantenimiento incluye revisión completa del sistema y calibración de sensores.",
+      "adminComments": "Precio aprobado. Proceder con el mantenimiento según lo programado.",
+      "invoiceNumber": "INV-006",
+      "items": [
+        {
+          "productId": 9,
+          "quantity": 1,
+          "unitPrice": 95
+        }
+      ],
+      "totalCost": 95,
+      "history": [
+        {
+          "timestamp": "2024-12-10T14:00:00Z",
+          "status": "created",
+          "comment": "Proyecto creado por Carlos Mendoza"
+        },
+        {
+          "timestamp": "2024-12-12T09:15:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Miguel Sánchez"
+        },
+        {
+          "timestamp": "2024-12-18T11:00:00Z",
+          "status": "working",
+          "comment": "Miguel Sánchez comenzó el trabajo"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "projectName": "INV-007 - Patricia Torres",
+      "clientName": "Patricia Torres",
+      "clientEmail": "patricia.torres@email.com",
+      "clientPhone": "+56933445566",
+      "projectType": "Instalación Premium",
+      "description": "Instalación de sistema de seguridad premium con cámaras 4K y control inteligente",
+      "status": "completed",
+      "createdBy": "Ana López",
+      "createdAt": "2024-12-05T10:00:00Z",
+      "scheduledStart": "2024-12-12T09:00:00Z",
+      "scheduledEnd": "2024-12-13T18:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "installerStatus": "completed",
+      "installerPayment": 450,
+      "installerPriceProposal": 450,
+      "installerPriceStatus": "finalized",
+      "installerComments": "Instalación completada exitosamente. Sistema probado y funcionando correctamente. Cliente satisfecho con la calidad del trabajo.",
+      "adminComments": "Pago aprobado. Excelente trabajo en instalación premium.",
+      "invoiceNumber": "INV-007",
+      "items": [
+        {
+          "productId": 2,
+          "quantity": 4,
+          "unitPrice": 80
+        },
+        {
+          "productId": 4,
+          "quantity": 1,
+          "unitPrice": 150
+        },
+        {
+          "productId": 5,
+          "quantity": 2,
+          "unitPrice": 60
+        }
+      ],
+      "totalCost": 470,
+      "history": [
+        {
+          "timestamp": "2024-12-05T10:00:00Z",
+          "status": "created",
+          "comment": "Proyecto premium creado por Ana López"
+        },
+        {
+          "timestamp": "2024-12-08T14:20:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Carlos Rodríguez"
+        },
+        {
+          "timestamp": "2024-12-12T09:00:00Z",
+          "status": "working",
+          "comment": "Trabajo iniciado"
+        },
+        {
+          "timestamp": "2024-12-13T16:30:00Z",
+          "status": "completed",
+          "comment": "Instalación completada exitosamente"
+        },
+        {
+          "timestamp": "2024-12-14T08:45:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado y pago procesado"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "projectName": "INV-008 - Jorge Ramírez",
+      "clientName": "Jorge Ramírez",
+      "clientEmail": "jorge.ramirez@email.com",
+      "clientPhone": "+56944556677",
+      "projectType": "Reparación Urgente",
+      "description": "Reparación urgente de sistema de alarmas dañado por cortocircuito",
+      "status": "assigned",
+      "createdBy": "Carlos Mendoza",
+      "createdAt": "2024-12-18T16:00:00Z",
+      "scheduledStart": "2024-12-22T08:00:00Z",
+      "scheduledEnd": "2024-12-22T14:00:00Z",
+      "assignedInstaller": "Laura Martínez",
+      "installerStatus": "assigned",
+      "installerPayment": 0,
+      "installerPriceProposal": 200,
+      "installerPriceStatus": "rejected",
+      "installerComments": "Debido a la urgencia del trabajo y la complejidad de la reparación (daño por cortocircuito), propongo $200 que incluye piezas de reemplazo y mano de obra especializada.",
+      "adminComments": "Precio rechazado. El costo de piezas no justifica $200. Máximo aprobado: $150. Favor ajustar propuesta.",
+      "invoiceNumber": "INV-008",
+      "items": [
+        {
+          "productId": 6,
+          "quantity": 1,
+          "unitPrice": 120
+        },
+        {
+          "productId": 7,
+          "quantity": 1,
+          "unitPrice": 30
+        }
+      ],
+      "totalCost": 150,
+      "history": [
+        {
+          "timestamp": "2024-12-18T16:00:00Z",
+          "status": "created",
+          "comment": "Reparación urgente creada por Carlos Mendoza"
+        },
+        {
+          "timestamp": "2024-12-19T09:30:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Laura Martínez por urgencia"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "projectName": "INV-009 - Carmen Díaz",
+      "clientName": "Carmen Díaz",
+      "clientEmail": "carmen.diaz@email.com",
+      "clientPhone": "+56955667788",
+      "projectType": "Instalación Residencial",
+      "description": "Instalación de sistema básico de seguridad en casa de fin de semana",
+      "status": "working",
+      "createdBy": "Ana López",
+      "createdAt": "2024-12-12T11:00:00Z",
+      "scheduledStart": "2024-12-24T10:00:00Z",
+      "scheduledEnd": "2024-12-24T16:00:00Z",
+      "assignedInstaller": "Laura Martínez",
+      "installerStatus": "working",
+      "installerPayment": 0,
+      "installerPriceProposal": 120,
+      "installerPriceStatus": "pending",
+      "installerComments": "Precio propuesto de $120 incluye instalación estándar con materiales incluidos. El cliente solicitó instalación para este fin de semana.",
+      "invoiceNumber": "INV-009",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "unitPrice": 80
+        },
+        {
+          "productId": 3,
+          "quantity": 1,
+          "unitPrice": 25
+        },
+        {
+          "productId": 8,
+          "quantity": 1,
+          "unitPrice": 15
+        }
+      ],
+      "totalCost": 120,
+      "history": [
+        {
+          "timestamp": "2024-12-12T11:00:00Z",
+          "status": "created",
+          "comment": "Proyecto residencial creado por Ana López"
+        },
+        {
+          "timestamp": "2024-12-14T13:45:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Laura Martínez"
+        },
+        {
+          "timestamp": "2024-12-20T10:15:00Z",
+          "status": "working",
+          "comment": "Laura Martínez inició la instalación"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "projectName": "INV-010 - Fernando Vargas",
+      "clientName": "Fernando Vargas",
+      "clientEmail": "fernando.vargas@email.com",
+      "clientPhone": "+56966778899",
+      "projectType": "Instalación Empresarial",
+      "description": "Instalación completa de sistema de seguridad para pequeña empresa",
+      "status": "approved",
+      "createdBy": "Carlos Mendoza",
+      "createdAt": "2024-12-08T09:00:00Z",
+      "scheduledStart": "2024-12-26T08:00:00Z",
+      "scheduledEnd": "2024-12-27T17:00:00Z",
+      "assignedInstaller": "Miguel Sánchez",
+      "installerStatus": "assigned",
+      "installerPayment": 0,
+      "installerPriceProposal": 320,
+      "installerPriceStatus": "finalized",
+      "installerComments": "Después de revisar con administración, ajusté el precio a $320. Incluye instalación profesional, configuración empresarial y capacitación al personal.",
+      "adminComments": "Precio final aprobado. El ajuste es razonable considerando la complejidad empresarial.",
+      "invoiceNumber": "INV-010",
+      "items": [
+        {
+          "productId": 2,
+          "quantity": 6,
+          "unitPrice": 70
+        },
+        {
+          "productId": 4,
+          "quantity": 1,
+          "unitPrice": 140
+        },
+        {
+          "productId": 5,
+          "quantity": 3,
+          "unitPrice": 50
+        }
+      ],
+      "totalCost": 320,
+      "history": [
+        {
+          "timestamp": "2024-12-08T09:00:00Z",
+          "status": "created",
+          "comment": "Proyecto empresarial creado por Carlos Mendoza"
+        },
+        {
+          "timestamp": "2024-12-10T11:20:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Miguel Sánchez"
+        },
+        {
+          "timestamp": "2024-12-16T15:30:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado después de negociación de precio"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "projectName": "INV-011 - Isabel Moreno",
+      "clientName": "Isabel Moreno",
+      "clientEmail": "isabel.moreno@email.com",
+      "clientPhone": "+56977889900",
+      "projectType": "Mantenimiento Anual",
+      "description": "Mantenimiento anual completo del sistema de seguridad existente",
+      "status": "completed",
+      "createdBy": "Ana López",
+      "createdAt": "2024-12-01T12:00:00Z",
+      "scheduledStart": "2024-12-14T09:00:00Z",
+      "scheduledEnd": "2024-12-14T13:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "installerStatus": "completed",
+      "installerPayment": 85,
+      "installerPriceProposal": 85,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Mantenimiento completado. Revisé todos los sensores, cambié baterías y calibré el sistema. Todo funcionando correctamente.",
+      "adminComments": "Pago procesado. Mantenimiento anual completado satisfactoriamente.",
+      "invoiceNumber": "INV-011",
+      "items": [
+        {
+          "productId": 9,
+          "quantity": 1,
+          "unitPrice": 85
+        }
+      ],
+      "totalCost": 85,
+      "history": [
+        {
+          "timestamp": "2024-12-01T12:00:00Z",
+          "status": "created",
+          "comment": "Mantenimiento anual programado"
+        },
+        {
+          "timestamp": "2024-12-03T10:45:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Carlos Rodríguez"
+        },
+        {
+          "timestamp": "2024-12-14T09:00:00Z",
+          "status": "working",
+          "comment": "Mantenimiento iniciado"
+        },
+        {
+          "timestamp": "2024-12-14T12:45:00Z",
+          "status": "completed",
+          "comment": "Mantenimiento completado exitosamente"
+        },
+        {
+          "timestamp": "2024-12-15T08:30:00Z",
+          "status": "approved",
+          "comment": "Aprobado y pago procesado"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "projectName": "INV-012 - Diego Castro",
+      "clientName": "Diego Castro",
+      "clientEmail": "diego.castro@email.com",
+      "clientPhone": "+56988990011",
+      "projectType": "Instalación de Emergencia",
+      "description": "Instalación de emergencia de sistema básico tras robo",
+      "status": "working",
+      "createdBy": "Carlos Mendoza",
+      "createdAt": "2024-12-19T20:00:00Z",
+      "scheduledStart": "2024-12-21T07:00:00Z",
+      "scheduledEnd": "2024-12-21T12:00:00Z",
+      "assignedInstaller": "Laura Martínez",
+      "installerStatus": "working",
+      "installerPayment": 0,
+      "installerPriceProposal": 160,
+      "installerPriceStatus": "pending",
+      "installerComments": "Trabajo de emergencia por robo. Necesito instalar rápidamente para proteger la propiedad. Precio incluye tarifa de urgencia.",
+      "invoiceNumber": "INV-012",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "unitPrice": 90
+        },
+        {
+          "productId": 3,
+          "quantity": 2,
+          "unitPrice": 35
+        }
+      ],
+      "totalCost": 160,
+      "history": [
+        {
+          "timestamp": "2024-12-19T20:00:00Z",
+          "status": "created",
+          "comment": "Instalación de emergencia creada urgentemente"
+        },
+        {
+          "timestamp": "2024-12-20T06:00:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Laura Martínez para trabajo de emergencia"
+        },
+        {
+          "timestamp": "2024-12-21T07:30:00Z",
+          "status": "working",
+          "comment": "Trabajo de emergencia iniciado"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "projectName": "INV-013 - Patricia Morales",
+      "clientName": "Patricia Morales",
+      "clientEmail": "patricia.morales@email.com",
+      "clientPhone": "+56911223344",
+      "projectType": "Instalación Residencial Premium",
+      "description": "Instalación completa de sistema de seguridad premium con cámaras y sensores",
+      "status": "draft",
+      "createdBy": "Roberto Silva",
+      "createdAt": "2024-12-20T09:00:00Z",
+      "scheduledStart": "2024-12-25T08:00:00Z",
+      "scheduledEnd": "2024-12-26T18:00:00Z",
+      "assignedInstaller": "Pedro Ramírez",
+      "installerStatus": "working",
+      "installerPayment": 0,
+      "installerPriceProposal": 2500,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Sistema premium completo. Cliente solicitó instalación para Navidad.",
+      "priceProposalDate": "2024-12-21T10:00:00Z",
+      "installationDate": "2024-12-25T08:00:00Z",
+      "invoiceNumber": "INV-013",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 3,
+          "unitPrice": 120
+        },
+        {
+          "productId": 2,
+          "quantity": 4,
+          "unitPrice": 85
+        },
+        {
+          "productId": 5,
+          "quantity": 2,
+          "unitPrice": 450
+        },
+        {
+          "productId": 8,
+          "quantity": 1,
+          "unitPrice": 1200
+        }
+      ],
+      "totalCost": 2500,
+      "history": [
+        {
+          "timestamp": "2024-12-20T09:00:00Z",
+          "status": "created",
+          "comment": "Proyecto premium creado por Roberto Silva"
+        },
+        {
+          "timestamp": "2024-12-21T10:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado por departamento de compras"
+        },
+        {
+          "timestamp": "2024-12-22T14:00:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Pedro Ramírez - especialista en sistemas premium"
+        },
+        {
+          "timestamp": "2024-12-25T08:30:00Z",
+          "status": "in-progress",
+          "comment": "Instalación premium iniciada"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "projectName": "INV-014 - Miguel Herrera",
+      "clientName": "Miguel Herrera",
+      "clientEmail": "miguel.herrera@email.com",
+      "clientPhone": "+56922334455",
+      "projectType": "Mantenimiento y Reparación",
+      "description": "Mantenimiento preventivo y reparación de sistema existente",
+      "status": "completed",
+      "createdBy": "Gabriela Ruiz",
+      "createdAt": "2024-12-15T11:30:00Z",
+      "scheduledStart": "2024-12-22T09:00:00Z",
+      "scheduledEnd": "2024-12-22T14:00:00Z",
+      "assignedInstaller": "Diego Torres",
+      "installerStatus": "completed",
+      "installerPayment": 320,
+      "installerPriceProposal": 350,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Mantenimiento completado. Sistema funcionando perfectamente.",
+      "priceProposalDate": "2024-12-18T09:00:00Z",
+      "installationDate": "2024-12-22T09:00:00Z",
+      "invoiceNumber": "INV-014",
+      "items": [
+        {
+          "productId": 12,
+          "quantity": 1,
+          "unitPrice": 150
+        },
+        {
+          "productId": 15,
+          "quantity": 2,
+          "unitPrice": 100
+        }
+      ],
+      "totalCost": 350,
+      "history": [
+        {
+          "timestamp": "2024-12-15T11:30:00Z",
+          "status": "created",
+          "comment": "Mantenimiento programado creado por Gabriela Ruiz"
+        },
+        {
+          "timestamp": "2024-12-18T09:00:00Z",
+          "status": "approved",
+          "comment": "Aprobado para mantenimiento preventivo"
+        },
+        {
+          "timestamp": "2024-12-20T16:00:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Diego Torres"
+        },
+        {
+          "timestamp": "2024-12-22T09:15:00Z",
+          "status": "in-progress",
+          "comment": "Mantenimiento iniciado"
+        },
+        {
+          "timestamp": "2024-12-22T14:30:00Z",
+          "status": "completed",
+          "comment": "Mantenimiento completado exitosamente"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "projectName": "INV-015 - Carolina Vega",
+      "clientName": "Carolina Vega",
+      "clientEmail": "carolina.vega@email.com",
+      "clientPhone": "+56933445566",
+      "projectType": "Instalación Comercial",
+      "description": "Instalación de sistema de seguridad para pequeña oficina",
+      "status": "draft",
+      "createdBy": "Luis Fernández",
+      "createdAt": "2024-12-21T14:00:00Z",
+      "scheduledStart": "2024-12-27T08:00:00Z",
+      "scheduledEnd": "2024-12-27T16:00:00Z",
+      "assignedInstaller": "Fernando Morales",
+      "installerStatus": "pending",
+      "installerPayment": 0,
+      "installerPriceProposal": 850,
+      "installerPriceStatus": "pending",
+      "installerComments": "Esperando aprobación de precio por parte del cliente",
+      "priceProposalDate": "2024-12-22T11:00:00Z",
+      "invoiceNumber": "INV-015",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "unitPrice": 110
+        },
+        {
+          "productId": 4,
+          "quantity": 1,
+          "unitPrice": 200
+        },
+        {
+          "productId": 6,
+          "quantity": 3,
+          "unitPrice": 180
+        }
+      ],
+      "totalCost": 850,
+      "history": [
+        {
+          "timestamp": "2024-12-21T14:00:00Z",
+          "status": "created",
+          "comment": "Proyecto comercial creado por Luis Fernández"
+        },
+        {
+          "timestamp": "2024-12-22T11:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado, esperando asignación de instalador"
+        },
+        {
+          "timestamp": "2024-12-23T10:00:00Z",
+          "status": "assigned",
+          "comment": "Asignado a Fernando Morales para instalación comercial"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "projectName": "INV-016 - Andrés Soto",
+      "clientName": "Andrés Soto",
+      "clientEmail": "andres.soto@email.com",
+      "clientPhone": "+56944556677",
+      "projectType": "Instalación Residencial",
+      "description": "Instalación básica de sistema de seguridad residencial",
+      "status": "working",
+      "createdBy": "Carmen Vargas",
+      "createdAt": "2024-12-19T16:00:00Z",
+      "scheduledStart": "2024-12-24T10:00:00Z",
+      "scheduledEnd": "2024-12-24T15:00:00Z",
+      "assignedInstaller": "María González",
+      "installerStatus": "working",
+      "installerPayment": 0,
+      "installerPriceProposal": 420,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Instalación básica en proceso. Cliente satisfecho con el progreso.",
+      "priceProposalDate": "2024-12-20T14:00:00Z",
+      "installationDate": "2024-12-24T10:00:00Z",
+      "invoiceNumber": "INV-016",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "unitPrice": 95
+        },
+        {
+          "productId": 3,
+          "quantity": 2,
+          "unitPrice": 35
+        },
+        {
+          "productId": 7,
+          "quantity": 1,
+          "unitPrice": 85
+        }
+      ],
+      "totalCost": 420,
+      "history": [
+        {
+          "timestamp": "2024-12-19T16:00:00Z",
+          "status": "created",
+          "comment": "Instalación básica creada por Carmen Vargas"
+        },
+        {
+          "timestamp": "2024-12-20T14:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado"
+        },
+        {
+          "timestamp": "2024-12-21T09:00:00Z",
+          "status": "assigned",
+          "comment": "Asignado a María González"
+        },
+        {
+          "timestamp": "2024-12-24T10:30:00Z",
+          "status": "in-progress",
+          "comment": "Instalación iniciada"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "projectName": "INV-017 - Valentina Ruiz",
+      "clientName": "Valentina Ruiz",
+      "clientEmail": "valentina.ruiz@email.com",
+      "clientPhone": "+56955667788",
+      "projectType": "Reparación Urgente",
+      "description": "Reparación de sistema dañado por tormenta",
+      "status": "completed",
+      "createdBy": "Ana López",
+      "createdAt": "2024-12-18T08:00:00Z",
+      "scheduledStart": "2024-12-23T07:00:00Z",
+      "scheduledEnd": "2024-12-23T13:00:00Z",
+      "assignedInstaller": "José Antonio Díaz",
+      "installerStatus": "completed",
+      "installerPayment": 280,
+      "installerPriceProposal": 320,
+      "installerPriceStatus": "accepted",
+      "installerComments": "Reparación completada. Sistema funcionando después de la tormenta.",
+      "priceProposalDate": "2024-12-19T08:00:00Z",
+      "installationDate": "2024-12-23T07:00:00Z",
+      "invoiceNumber": "INV-017",
+      "items": [
+        {
+          "productId": 9,
+          "quantity": 1,
+          "unitPrice": 120
+        },
+        {
+          "productId": 10,
+          "quantity": 2,
+          "unitPrice": 100
+        }
+      ],
+      "totalCost": 320,
+      "history": [
+        {
+          "timestamp": "2024-12-18T08:00:00Z",
+          "status": "created",
+          "comment": "Reparación urgente por tormenta"
+        },
+        {
+          "timestamp": "2024-12-19T08:00:00Z",
+          "status": "approved",
+          "comment": "Aprobado como reparación de emergencia"
+        },
+        {
+          "timestamp": "2024-12-20T15:00:00Z",
+          "status": "assigned",
+          "comment": "Asignado a José Antonio Díaz para reparación urgente"
+        },
+        {
+          "timestamp": "2024-12-23T07:15:00Z",
+          "status": "in-progress",
+          "comment": "Reparación iniciada"
+        },
+        {
+          "timestamp": "2024-12-23T13:45:00Z",
+          "status": "completed",
+          "comment": "Reparación completada exitosamente"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "projectName": "INV-018 - Francisco Morales",
+      "clientName": "Francisco Morales",
+      "clientEmail": "francisco.morales@email.com",
+      "clientPhone": "+56966778899",
+      "projectType": "Instalación Residencial Premium",
+      "description": "Sistema completo con monitoreo 24/7 y app móvil",
+      "status": "assigned",
+      "createdBy": "Roberto Silva",
+      "createdAt": "2024-12-22T10:00:00Z",
+      "scheduledStart": "2024-12-28T09:00:00Z",
+      "scheduledEnd": "2024-12-29T17:00:00Z",
+      "assignedInstaller": "Carlos Rodríguez",
+      "installerStatus": "pending",
+      "installerPayment": 0,
+      "installerPriceProposal": 1500,
+      "installerPriceStatus": "pending",
+      "installerComments": "Cliente solicitó sistema premium con monitoreo completo",
+      "priceProposalDate": "2024-12-23T14:00:00Z",
+      "invoiceNumber": "INV-018",
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "unitPrice": 130
+        },
+        {
+          "productId": 2,
+          "quantity": 3,
+          "unitPrice": 90
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "unitPrice": 500
+        },
+        {
+          "productId": 8,
+          "quantity": 1,
+          "unitPrice": 1000
+        }
+      ],
+      "totalCost": 1800,
+      "history": [
+        {
+          "timestamp": "2024-12-22T10:00:00Z",
+          "status": "created",
+          "comment": "Proyecto premium creado por Roberto Silva"
+        },
+        {
+          "timestamp": "2024-12-23T14:00:00Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado para instalación premium"
+        },
+        {
+          "timestamp": "2025-11-22T01:43:26.596Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado por admin"
+        },
+        {
+          "timestamp": "2025-11-22T01:43:40.815Z",
+          "status": "assigned",
+          "comment": "Instalador asignado"
+        }
+      ],
+      "updatedAt": "2025-11-22T01:43:40.815Z"
+    },
+    {
+      "id": 19,
+      "projectName": "INV-019 - Cliente Test",
+      "invoiceNumber": "INV-019",
+      "clientName": "Cliente Test",
+      "clientEmail": "test@email.com",
+      "totalCost": 1000,
+      "status": "approved",
+      "createdAt": "2025-11-22T01:46:53.531Z",
+      "createdBy": "Admin",
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-22T01:46:53.531Z",
+          "status": "created",
+          "comment": "Proyecto creado"
+        },
+        {
+          "timestamp": "2025-11-22T01:46:55.638Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado por admin"
+        }
+      ],
+      "updatedAt": "2025-11-22T01:46:55.638Z"
+    },
+    {
+      "id": 20,
+      "projectName": "INV-020 - Cliente Test 2",
+      "invoiceNumber": "INV-020",
+      "clientName": "Cliente Test 2",
+      "clientEmail": "test2@email.com",
+      "totalCost": 2000,
+      "status": "approved",
+      "createdAt": "2025-11-22T01:47:31.031Z",
+      "createdBy": "Roberto Silva",
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-22T01:47:31.031Z",
+          "status": "created",
+          "comment": "Proyecto creado"
+        },
+        {
+          "timestamp": "2025-11-22T01:47:33.092Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado por admin"
+        }
+      ],
+      "updatedAt": "2025-11-22T01:47:33.092Z"
+    },
+    {
+      "id": 21,
+      "projectName": "INV-021 - Cliente Test 3",
+      "invoiceNumber": "INV-021",
+      "clientName": "Cliente Test 3",
+      "clientEmail": "test3@email.com",
+      "totalCost": 1500,
+      "status": "draft",
+      "createdAt": "2025-11-22T01:47:56.625Z",
+      "createdBy": "Gabriela Ruiz",
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-22T01:47:56.625Z",
+          "status": "created",
+          "comment": "Proyecto creado"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "projectName": "ROOFING - Roofing Shingles",
+      "invoiceNumber": "INV-022",
+      "clientName": "Ana LÃ³pez",
+      "clientEmail": "",
+      "totalCost": 844.25,
+      "status": "assigned",
+      "createdAt": "2025-11-23T18:48:19.428Z",
+      "createdBy": "Ana López",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "ASPHALT SHINGLES",
+          "categoryId": 4,
+          "quantity": 10,
+          "unitPrice": 50,
+          "unitType": "bundle",
+          "total": 500
+        },
+        {
+          "productId": 2,
+          "productName": "REEMPLAZO DE BOOTS",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 25,
+          "unitType": "unit",
+          "total": 25
+        },
+        {
+          "productId": 3,
+          "productName": "DRIP EDGE FLASHING",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 8.75,
+          "unitType": "ft",
+          "total": 8.75
+        },
+        {
+          "productId": 4,
+          "productName": "FLASHING CHIMENEA-CHICA",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 85,
+          "unitType": "unit",
+          "total": 85
+        },
+        {
+          "productId": 5,
+          "productName": "FLASHING CHIMENEA-MEDIANA",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 125,
+          "unitType": "unit",
+          "total": 125
+        },
+        {
+          "productId": 6,
+          "productName": "FLASHING CHIMENEA-GRANDE",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 0,
+          "unitType": "unit",
+          "total": 0
+        },
+        {
+          "productId": 7,
+          "productName": "PEEL AND STICK ROOF LEAK BARRIER",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 65,
+          "unitType": "roll",
+          "total": 65
+        },
+        {
+          "productId": 8,
+          "productName": "SYNTHETIC ROOFING UNDERLAYMENT",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 35.5,
+          "unitType": "roll",
+          "total": 35.5
+        },
+        {
+          "productId": 9,
+          "productName": "COIL ROOFING NAILS",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 0,
+          "unitType": "coil",
+          "total": 0
+        },
+        {
+          "productId": 10,
+          "productName": "PLASTIC CAP ROOFING NAILS",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 0,
+          "unitType": "box",
+          "total": 0
+        }
+      ],
+      "history": [
+        {
+          "timestamp": "2025-11-23T18:48:19.428Z",
+          "status": "created",
+          "comment": "Proyecto creado"
+        },
+        {
+          "timestamp": "2025-11-23T18:51:41.598Z",
+          "status": "pending_approval",
+          "comment": "Estado actualizado a pendiente de aprobación",
+          "user": "system",
+          "action": "Cambio de estado: draft → pending_approval"
+        },
+        {
+          "timestamp": "2025-11-23T20:15:59.812Z",
+          "status": "approved",
+          "comment": "Proyecto aprobado por administrador",
+          "user": "Admin User",
+          "action": "Cambio de estado: pending_approval → approved"
+        },
+        {
+          "timestamp": "2025-11-23T20:50:37.063Z",
+          "status": "assigned",
+          "comment": "Instalador asignado: Carlos Rodríguez - Instalación programada: 2025-11-24 09:00",
+          "user": "Ana López",
+          "action": "Cambio de estado: approved → assigned"
+        }
+      ],
+      "approvedAt": "2025-11-23T20:15:59.812Z",
+      "approvedBy": "Admin User",
+      "lastModified": "2025-11-23T20:50:37.063Z",
+      "lastModifiedBy": "Ana López",
+      "scheduledInstallation": "2025-11-24T09:00",
+      "assignedInstaller": "Carlos Rodríguez"
+    },
+    {
+      "id": 1001,
+      "projectName": "TEST-001 - Proyecto de Hoy",
+      "clientName": "Cliente Hoy",
+      "clientEmail": "hoy@email.com",
+      "status": "draft",
+      "createdBy": "vendedor1",
+      "createdAt": "2025-11-23T10:00:00Z",
+      "totalCost": 500,
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-23T10:00:00Z",
+          "status": "created",
+          "comment": "Proyecto creado hoy"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "projectName": "TEST-002 - Proyecto de Ayer",
+      "clientName": "Cliente Ayer",
+      "clientEmail": "ayer@email.com",
+      "status": "pending_approval",
+      "createdBy": "vendedor2",
+      "createdAt": "2025-11-22T15:30:00Z",
+      "totalCost": 750,
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-22T15:30:00Z",
+          "status": "created",
+          "comment": "Proyecto creado ayer"
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "projectName": "TEST-003 - Proyecto de Esta Semana",
+      "clientName": "Cliente Semana",
+      "clientEmail": "semana@email.com",
+      "status": "approved",
+      "createdBy": "admin",
+      "createdAt": "2025-11-20T09:15:00Z",
+      "totalCost": 1200,
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-20T09:15:00Z",
+          "status": "created",
+          "comment": "Proyecto creado esta semana"
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "projectName": "TEST-004 - Proyecto de Este Mes",
+      "clientName": "Cliente Mes",
+      "clientEmail": "mes@email.com",
+      "status": "in_progress",
+      "createdBy": "vendedor1",
+      "createdAt": "2025-11-10T14:45:00Z",
+      "totalCost": 2000,
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-11-10T14:45:00Z",
+          "status": "created",
+          "comment": "Proyecto creado este mes"
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "projectName": "TEST-005 - Proyecto del Mes Pasado",
+      "clientName": "Cliente Mes Pasado",
+      "clientEmail": "mespasado@email.com",
+      "status": "completed",
+      "createdBy": "vendedor2",
+      "createdAt": "2025-10-15T11:20:00Z",
+      "totalCost": 800,
+      "items": [],
+      "history": [
+        {
+          "timestamp": "2025-10-15T11:20:00Z",
+          "status": "created",
+          "comment": "Proyecto creado el mes pasado"
+        }
+      ]
+    },
+    {
+      "id": 1006,
+      "projectName": "ROOFING - Roofing Shingles",
+      "invoiceNumber": "INV-1006",
+      "clientName": "Ana LÃ³pez",
+      "clientEmail": "",
+      "totalCost": 83.75,
+      "status": "pending_approval",
+      "createdAt": "2025-11-23T21:07:39.271Z",
+      "createdBy": "Ana LÃ³pez",
+      "approvedAt": null,
+      "approvedBy": null,
+      "lastModified": "2025-11-23T21:07:39.271Z",
+      "lastModifiedBy": "Ana LÃ³pez",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "ASPHALT SHINGLES",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 50,
+          "unitType": "bundle",
+          "total": 50
+        },
+        {
+          "productId": 2,
+          "productName": "REEMPLAZO DE BOOTS",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 25,
+          "unitType": "unit",
+          "total": 25
+        },
+        {
+          "productId": 3,
+          "productName": "DRIP EDGE FLASHING",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 8.75,
+          "unitType": "ft",
+          "total": 8.75
+        }
+      ],
+      "categoryId": 1,
+      "systemId": 4,
+      "history": [
+        {
+          "timestamp": "2025-11-23T21:07:39.271Z",
+          "status": "created",
+          "comment": "Proyecto creado por Ana LÃ³pez",
+          "user": "Ana LÃ³pez"
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "projectName": "ROOFING - EPDM Rubber Roofing",
+      "invoiceNumber": "INV-1007",
+      "clientName": "Ana LÃ³pez",
+      "clientEmail": "",
+      "totalCost": 12075,
+      "status": "pending_approval",
+      "createdAt": "2025-11-23T21:12:25.415Z",
+      "createdBy": "Ana LÃ³pez",
+      "approvedAt": null,
+      "approvedBy": null,
+      "lastModified": "2025-11-23T21:12:25.415Z",
+      "lastModifiedBy": "Ana LÃ³pez",
+      "items": [
+        {
+          "productId": 11,
+          "productName": "EPDM .60 10X100",
+          "categoryId": 5,
+          "quantity": 10,
+          "unitPrice": 1200,
+          "unitType": "roll",
+          "total": 12000
+        },
+        {
+          "productId": 12,
+          "productName": "INSOLATION 1\"",
+          "categoryId": 5,
+          "quantity": 1,
+          "unitPrice": 30,
+          "unitType": "sheet",
+          "total": 30
+        },
+        {
+          "productId": 13,
+          "productName": "INSOLATION 2\"",
+          "categoryId": 5,
+          "quantity": 1,
+          "unitPrice": 45,
+          "unitType": "sheet",
+          "total": 45
+        }
+      ],
+      "categoryId": 1,
+      "systemId": 5,
+      "history": [
+        {
+          "timestamp": "2025-11-23T21:12:25.415Z",
+          "status": "created",
+          "comment": "Proyecto creado por Ana LÃ³pez",
+          "user": "Ana LÃ³pez"
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "projectName": "SIDING - James Hardy",
+      "invoiceNumber": "INV-1008",
+      "clientName": "Ana LÃ³pez",
+      "clientEmail": "",
+      "totalCost": 31.25,
+      "status": "pending_approval",
+      "createdAt": "2025-11-23T21:17:17.538Z",
+      "createdBy": "Ana LÃ³pez",
+      "approvedAt": null,
+      "approvedBy": null,
+      "lastModified": "2025-11-23T21:17:17.538Z",
+      "lastModifiedBy": "Ana LÃ³pez",
+      "items": [
+        {
+          "productId": 25,
+          "productName": "HardieTrim NT3 - Outside/Inside Corner",
+          "categoryId": 8,
+          "quantity": 1,
+          "unitPrice": 12.5,
+          "unitType": "piece",
+          "total": 12.5
+        },
+        {
+          "productId": 26,
+          "productName": "HardieTrim NT3 - Windows",
+          "categoryId": 8,
+          "quantity": 1,
+          "unitPrice": 18.75,
+          "unitType": "piece",
+          "total": 18.75
+        },
+        {
+          "productId": 27,
+          "productName": "Flat Tabs",
+          "categoryId": 8,
+          "quantity": 1,
+          "unitPrice": 0,
+          "unitType": "box",
+          "total": 0
+        }
+      ],
+      "categoryId": 2,
+      "systemId": 8,
+      "history": [
+        {
+          "timestamp": "2025-11-23T21:17:17.538Z",
+          "status": "created",
+          "comment": "Proyecto creado por Ana LÃ³pez",
+          "user": "Ana LÃ³pez"
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "projectName": "ROOFING - Roofing Shingles",
+      "invoiceNumber": "INV-1009",
+      "clientName": "Ana LÃ³pez",
+      "clientEmail": "",
+      "totalCost": 168.75,
+      "status": "pending_approval",
+      "createdAt": "2025-11-23T22:26:19.987Z",
+      "createdBy": "Ana LÃ³pez",
+      "createdById": 3,
+      "approvedAt": null,
+      "approvedBy": null,
+      "approvedById": null,
+      "lastModified": "2025-11-23T22:26:19.987Z",
+      "lastModifiedBy": "Ana LÃ³pez",
+      "lastModifiedById": 3,
+      "assignedInstaller": null,
+      "assignedInstallerId": null,
+      "items": [
+        {
+          "productId": 1,
+          "productName": "ASPHALT SHINGLES",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 50,
+          "unitType": "bundle",
+          "total": 50
+        },
+        {
+          "productId": 2,
+          "productName": "REEMPLAZO DE BOOTS",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 25,
+          "unitType": "unit",
+          "total": 25
+        },
+        {
+          "productId": 3,
+          "productName": "DRIP EDGE FLASHING",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 8.75,
+          "unitType": "ft",
+          "total": 8.75
+        },
+        {
+          "productId": 4,
+          "productName": "FLASHING CHIMENEA-CHICA",
+          "categoryId": 4,
+          "quantity": 1,
+          "unitPrice": 85,
+          "unitType": "unit",
+          "total": 85
+        }
+      ],
+      "categoryId": 1,
+      "systemId": 4,
+      "history": [
+        {
+          "timestamp": "2025-11-23T22:26:19.987Z",
+          "status": "created",
+          "comment": "Proyecto creado por Ana LÃ³pez",
+          "user": "Ana LÃ³pez",
+          "userId": 3
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Super Admin",
+      "username": "superadmin",
+      "email": "superadmin@example.com",
+      "role": "super_admin",
+      "password": "superadmin123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Admin User",
+      "username": "admin",
+      "email": "admin@example.com",
+      "role": "admin",
+      "password": "admin",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Ana López",
+      "username": "ana.lopez",
+      "email": "ana.lopez@example.com",
+      "role": "vendor",
+      "password": "vendor123",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "updatedAt": "2025-11-23T17:41:26.864Z"
+    },
+    {
+      "id": 4,
+      "name": "Carlos Mendoza",
+      "username": "carlos.mendoza",
+      "email": "carlos.mendoza@example.com",
+      "role": "vendor",
+      "password": "vendor123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Carlos Rodríguez",
+      "username": "carlos.rodriguez",
+      "email": "carlos.rodriguez@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Miguel Sánchez",
+      "username": "miguel.sanchez",
+      "email": "miguel.sanchez@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Laura Martínez",
+      "username": "laura.martinez",
+      "email": "laura.martinez@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Sofia Herrera",
+      "username": "sofia.herrera",
+      "email": "sofia.herrera@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Juan Pablo Vega",
+      "username": "juan.vega",
+      "email": "juan.vega@example.com",
+      "role": "purchasing",
+      "password": "purchasing123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Pedro Ramírez",
+      "username": "pedro.ramirez",
+      "email": "pedro.ramirez@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 11,
+      "name": "Diego Torres",
+      "username": "diego.torres",
+      "email": "diego.torres@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 12,
+      "name": "Fernando Morales",
+      "username": "fernando.morales",
+      "email": "fernando.morales@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 13,
+      "name": "Roberto Silva",
+      "username": "roberto.silva",
+      "email": "roberto.silva@example.com",
+      "role": "vendor",
+      "password": "vendor123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 14,
+      "name": "Gabriela Ruiz",
+      "username": "gabriela.ruiz",
+      "email": "gabriela.ruiz@example.com",
+      "role": "vendor",
+      "password": "vendor123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 15,
+      "name": "Luis Fernández",
+      "username": "luis.fernandez",
+      "email": "luis.fernandez@example.com",
+      "role": "vendor",
+      "password": "vendor123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 16,
+      "name": "María González",
+      "username": "maria.gonzalez",
+      "email": "maria.gonzalez@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 17,
+      "name": "José Antonio Díaz",
+      "username": "jose.diaz",
+      "email": "jose.diaz@example.com",
+      "role": "installer",
+      "password": "installer123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 18,
+      "name": "Carmen Vargas",
+      "username": "carmen.vargas",
+      "email": "carmen.vargas@example.com",
+      "role": "vendor",
+      "password": "vendor123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "userId": 2,
+      "type": "project_created",
+      "title": "Proyecto creado exitosamente",
+      "message": "Has creado el proyecto 'Casa Johnson - Roofing Shingles' para el cliente John Johnson",
+      "data": {
+        "projectId": 1,
+        "clientName": "John Johnson",
+        "projectName": "INV-001 - John Johnson"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 8,
+      "type": "project_pending_approval",
+      "title": "Proyecto pendiente de aprobación",
+      "message": "Nuevo proyecto 'Casa Johnson - Roofing Shingles' requiere aprobación de compras",
+      "data": {
+        "projectId": 1,
+        "clientName": "John Johnson",
+        "totalCost": 1750
+      },
+      "isRead": false,
+      "createdAt": "2025-11-15T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "type": "project_pending_approval",
+      "title": "Proyecto pendiente de aprobación",
+      "message": "Proyecto 'Casa Johnson - Roofing Shingles' ($1,750) requiere tu aprobación",
+      "data": {
+        "projectId": 1,
+        "clientName": "John Johnson",
+        "totalCost": 1750
+      },
+      "isRead": true,
+      "createdAt": "2025-11-15T10:30:00Z"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "type": "project_approved",
+      "title": "Proyecto aprobado",
+      "message": "Tu proyecto 'Casa Johnson - Roofing Shingles' ha sido aprobado por compras",
+      "data": {
+        "projectId": 1,
+        "approvedBy": "Juan Pablo Vega"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-15T11:00:00Z"
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "type": "installer_assigned",
+      "title": "Proyecto asignado",
+      "message": "Te han asignado el proyecto 'Casa Johnson - Roofing Shingles' para el cliente John Johnson",
+      "data": {
+        "projectId": 1,
+        "clientName": "John Johnson",
+        "assignedBy": "Ana López",
+        "scheduledDate": "2024-12-20T09:00:00Z"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-15T11:15:00Z"
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "type": "installer_assigned",
+      "title": "Instalador asignado",
+      "message": "Carlos Rodríguez ha sido asignado al proyecto 'Casa Johnson - Roofing Shingles'",
+      "data": {
+        "projectId": 1,
+        "installerName": "Carlos Rodríguez",
+        "scheduledDate": "2024-12-20T09:00:00Z"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-15T11:15:00Z"
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "type": "budget_request",
+      "title": "Solicitud de presupuesto",
+      "message": "Se requiere presupuesto para el proyecto 'Casa Johnson - Roofing Shingles'",
+      "data": {
+        "projectId": 1,
+        "clientName": "John Johnson",
+        "totalCost": 1750
+      },
+      "isRead": false,
+      "createdAt": "2025-11-15T11:30:00Z"
+    },
+    {
+      "id": 8,
+      "userId": 4,
+      "type": "project_started",
+      "title": "Proyecto iniciado",
+      "message": "Has iniciado el trabajo en el proyecto 'Casa Johnson - Roofing Shingles'",
+      "data": {
+        "projectId": 1,
+        "startDate": "2024-12-20T09:00:00Z"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-20T09:00:00Z"
+    },
+    {
+      "id": 9,
+      "userId": 2,
+      "type": "project_started",
+      "title": "Proyecto en progreso",
+      "message": "El proyecto 'Casa Johnson - Roofing Shingles' ha sido iniciado por Carlos Rodríguez",
+      "data": {
+        "projectId": 1,
+        "installerName": "Carlos Rodríguez",
+        "startDate": "2024-12-20T09:00:00Z"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-20T09:00:00Z"
+    },
+    {
+      "id": 10,
+      "userId": 4,
+      "type": "project_completed",
+      "title": "Proyecto completado",
+      "message": "Has completado el proyecto 'Casa Johnson - Roofing Shingles'. Esperando aprobación de pago",
+      "data": {
+        "projectId": 1,
+        "completionDate": "2024-12-20T17:00:00Z"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-20T17:00:00Z"
+    },
+    {
+      "id": 11,
+      "userId": 2,
+      "type": "project_completed",
+      "title": "Proyecto completado",
+      "message": "El proyecto 'Casa Johnson - Roofing Shingles' ha sido completado por Carlos Rodríguez",
+      "data": {
+        "projectId": 1,
+        "installerName": "Carlos Rodríguez",
+        "completionDate": "2024-12-20T17:00:00Z"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-20T17:00:00Z"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "type": "payment_approved",
+      "title": "Pago aprobado",
+      "message": "Pago de $1,750 aprobado para el proyecto 'Casa Johnson - Roofing Shingles'",
+      "data": {
+        "projectId": 1,
+        "amount": 1750,
+        "installerName": "Carlos Rodríguez"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-21T08:00:00Z"
+    },
+    {
+      "id": 13,
+      "userId": 4,
+      "type": "payment_received",
+      "title": "Pago recibido",
+      "message": "Has recibido el pago de $1,750 por el proyecto 'Casa Johnson - Roofing Shingles'",
+      "data": {
+        "projectId": 1,
+        "amount": 1750
+      },
+      "isRead": false,
+      "createdAt": "2025-11-21T08:00:00Z"
+    },
+    {
+      "id": 14,
+      "userId": 3,
+      "type": "project_created",
+      "title": "Proyecto creado exitosamente",
+      "message": "Has creado el proyecto 'Techos Modernos - EPDM Installation' para el cliente María López",
+      "data": {
+        "projectId": 2,
+        "clientName": "María López",
+        "projectName": "INV-002 - María López"
+      },
+      "isRead": true,
+      "createdAt": "2024-12-10T14:20:00Z"
+    },
+    {
+      "id": 15,
+      "userId": 8,
+      "type": "project_pending_approval",
+      "title": "Proyecto pendiente de aprobación",
+      "message": "Nuevo proyecto 'Techos Modernos - EPDM Installation' ($3,495) requiere aprobación",
+      "data": {
+        "projectId": 2,
+        "clientName": "María López",
+        "totalCost": 3495
+      },
+      "isRead": false,
+      "createdAt": "2024-12-10T14:20:00Z"
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "type": "project_pending_approval",
+      "title": "Proyecto pendiente de aprobación",
+      "message": "Proyecto 'Techos Modernos - EPDM Installation' ($3,495) requiere tu aprobación",
+      "data": {
+        "projectId": 2,
+        "clientName": "María López",
+        "totalCost": 3495
+      },
+      "isRead": true,
+      "createdAt": "2024-12-10T14:20:00Z"
+    },
+    {
+      "id": 17,
+      "userId": 3,
+      "type": "project_approved",
+      "title": "Proyecto aprobado",
+      "message": "Tu proyecto 'Techos Modernos - EPDM Installation' ha sido aprobado",
+      "data": {
+        "projectId": 2,
+        "approvedBy": "Juan Pablo Vega"
+      },
+      "isRead": true,
+      "createdAt": "2024-12-12T10:00:00Z"
+    },
+    {
+      "id": 18,
+      "userId": 4,
+      "type": "installer_assigned",
+      "title": "Proyecto asignado",
+      "message": "Te han asignado el proyecto 'Techos Modernos - EPDM Installation'",
+      "data": {
+        "projectId": 2,
+        "clientName": "María López",
+        "assignedBy": "Carlos Mendoza"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-12T10:30:00Z"
+    },
+    {
+      "id": 19,
+      "userId": 4,
+      "type": "budget_request",
+      "title": "Solicitud de presupuesto",
+      "message": "Se requiere presupuesto para el proyecto 'Techos Modernos - EPDM Installation'",
+      "data": {
+        "projectId": 2,
+        "clientName": "María López",
+        "totalCost": 3495
+      },
+      "isRead": false,
+      "createdAt": "2024-12-12T10:45:00Z"
+    },
+    {
+      "id": 20,
+      "userId": 4,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto",
+      "message": "Has propuesto un presupuesto de $1,800 para el proyecto 'Techos Modernos - EPDM Installation'",
+      "data": {
+        "projectId": 2,
+        "proposedPrice": 1800,
+        "comments": "Precio aceptado, materiales incluidos"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-20T14:00:00Z"
+    },
+    {
+      "id": 21,
+      "userId": 1,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto por instalador",
+      "message": "Carlos Rodríguez propone $1,800 para 'Techos Modernos - EPDM Installation'",
+      "data": {
+        "projectId": 2,
+        "installerName": "Carlos Rodríguez",
+        "proposedPrice": 1800
+      },
+      "isRead": true,
+      "createdAt": "2024-12-20T14:00:00Z"
+    },
+    {
+      "id": 22,
+      "userId": 4,
+      "type": "budget_accepted",
+      "title": "Presupuesto aceptado",
+      "message": "Tu presupuesto de $1,800 ha sido aceptado para el proyecto 'Techos Modernos - EPDM Installation'",
+      "data": {
+        "projectId": 2,
+        "acceptedPrice": 1800
+      },
+      "isRead": false,
+      "createdAt": "2024-12-20T15:00:00Z"
+    },
+    {
+      "id": 23,
+      "userId": 4,
+      "type": "project_started",
+      "title": "Proyecto iniciado",
+      "message": "Has iniciado el trabajo en el proyecto 'Techos Modernos - EPDM Installation'",
+      "data": {
+        "projectId": 2,
+        "startDate": "2024-12-21T08:00:00Z"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-21T08:00:00Z"
+    },
+    {
+      "id": 24,
+      "userId": 5,
+      "type": "installer_assigned",
+      "title": "Proyecto asignado",
+      "message": "Te han asignado el proyecto 'Instalación Completa - Residencia González'",
+      "data": {
+        "projectId": 5,
+        "clientName": "María González",
+        "assignedBy": "Ana López"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-15T08:00:00Z"
+    },
+    {
+      "id": 25,
+      "userId": 5,
+      "type": "budget_request",
+      "title": "Solicitud de presupuesto",
+      "message": "Se requiere presupuesto para el proyecto 'Instalación Completa - Residencia González'",
+      "data": {
+        "projectId": 5,
+        "clientName": "María González",
+        "totalCost": 180
+      },
+      "isRead": false,
+      "createdAt": "2024-12-15T08:30:00Z"
+    },
+    {
+      "id": 26,
+      "userId": 5,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto",
+      "message": "Has propuesto un presupuesto de $180 para el proyecto 'Instalación Completa - Residencia González'",
+      "data": {
+        "projectId": 5,
+        "proposedPrice": 180,
+        "comments": "El precio propuesto de $180 incluye materiales premium..."
+      },
+      "isRead": false,
+      "createdAt": "2024-12-16T10:30:00Z"
+    },
+    {
+      "id": 27,
+      "userId": 1,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto por instalador",
+      "message": "Miguel Sánchez propone $180 para 'Instalación Completa - Residencia González'",
+      "data": {
+        "projectId": 5,
+        "installerName": "Miguel Sánchez",
+        "proposedPrice": 180
+      },
+      "isRead": true,
+      "createdAt": "2024-12-16T10:30:00Z"
+    },
+    {
+      "id": 28,
+      "userId": 6,
+      "type": "installer_assigned",
+      "title": "Proyecto asignado",
+      "message": "Te han asignado el proyecto 'Reparación Urgente - Ramírez'",
+      "data": {
+        "projectId": 8,
+        "clientName": "Jorge Ramírez",
+        "assignedBy": "Carlos Mendoza"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-18T16:00:00Z"
+    },
+    {
+      "id": 29,
+      "userId": 6,
+      "type": "budget_request",
+      "title": "Solicitud de presupuesto",
+      "message": "Se requiere presupuesto para el proyecto 'Reparación Urgente - Ramírez'",
+      "data": {
+        "projectId": 8,
+        "clientName": "Jorge Ramírez",
+        "totalCost": 150
+      },
+      "isRead": false,
+      "createdAt": "2024-12-18T16:30:00Z"
+    },
+    {
+      "id": 30,
+      "userId": 6,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto",
+      "message": "Has propuesto un presupuesto de $200 para el proyecto 'Reparación Urgente - Ramírez'",
+      "data": {
+        "projectId": 8,
+        "proposedPrice": 200,
+        "comments": "Debido a la urgencia del trabajo..."
+      },
+      "isRead": false,
+      "createdAt": "2024-12-19T09:30:00Z"
+    },
+    {
+      "id": 31,
+      "userId": 1,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto por instalador",
+      "message": "Laura Martínez propone $200 para 'Reparación Urgente - Ramírez'",
+      "data": {
+        "projectId": 8,
+        "installerName": "Laura Martínez",
+        "proposedPrice": 200
+      },
+      "isRead": true,
+      "createdAt": "2024-12-19T09:30:00Z"
+    },
+    {
+      "id": 32,
+      "userId": 6,
+      "type": "budget_rejected",
+      "title": "Presupuesto rechazado",
+      "message": "Tu presupuesto de $200 ha sido rechazado. Máximo aprobado: $150",
+      "data": {
+        "projectId": 8,
+        "rejectedPrice": 200,
+        "maxApproved": 150,
+        "reason": "El costo de piezas no justifica $200"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-19T10:00:00Z"
+    },
+    {
+      "id": 33,
+      "userId": 7,
+      "type": "installer_assigned",
+      "title": "Proyecto asignado",
+      "message": "Te han asignado el proyecto 'Instalación de Emergencia - Castro'",
+      "data": {
+        "projectId": 12,
+        "clientName": "Diego Castro",
+        "assignedBy": "Carlos Mendoza"
+      },
+      "isRead": false,
+      "createdAt": "2024-12-19T20:00:00Z"
+    },
+    {
+      "id": 34,
+      "userId": 7,
+      "type": "budget_request",
+      "title": "Solicitud de presupuesto",
+      "message": "Se requiere presupuesto para el proyecto 'Instalación de Emergencia - Castro'",
+      "data": {
+        "projectId": 12,
+        "clientName": "Diego Castro",
+        "totalCost": 160
+      },
+      "isRead": false,
+      "createdAt": "2024-12-19T20:30:00Z"
+    },
+    {
+      "id": 35,
+      "userId": 7,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto",
+      "message": "Has propuesto un presupuesto de $160 para el proyecto 'Instalación de Emergencia - Castro'",
+      "data": {
+        "projectId": 12,
+        "proposedPrice": 160,
+        "comments": "Trabajo de emergencia por robo..."
+      },
+      "isRead": false,
+      "createdAt": "2024-12-20T06:00:00Z"
+    },
+    {
+      "id": 36,
+      "userId": 1,
+      "type": "budget_proposed",
+      "title": "Presupuesto propuesto por instalador",
+      "message": "Sofia Herrera propone $160 para 'Instalación de Emergencia - Castro'",
+      "data": {
+        "projectId": 12,
+        "installerName": "Sofia Herrera",
+        "proposedPrice": 160
+      },
+      "isRead": true,
+      "createdAt": "2024-12-20T06:00:00Z"
+    },
+    {
+      "id": 37,
+      "userId": 1,
+      "type": "project_created",
+      "title": "Proyecto creado exitosamente",
+      "message": "Has creado el proyecto 'xxxx' para el cliente xxxx",
+      "data": {
+        "projectId": 13,
+        "clientName": "xxxx",
+        "projectName": "xxxx"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-19T00:30:13.731Z"
+    },
+    {
+      "id": 1763776053093,
+      "userId": 13,
+      "type": "project_approved",
+      "title": "Proyecto Aprobado",
+      "message": "Tu proyecto \"INV-020 - Cliente Test 2\" ha sido aprobado por el administrador y está listo para asignación de instalador.",
+      "data": {
+        "projectId": 20,
+        "projectName": "INV-020 - Cliente Test 2",
+        "clientName": "Cliente Test 2",
+        "approvedBy": "Admin"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-22T01:47:33.093Z"
+    },
+    {
+      "id": 1763776076625,
+      "userId": 14,
+      "type": "project_created",
+      "title": "Proyecto Creado",
+      "message": "Has creado exitosamente el proyecto \"INV-021 - Cliente Test 3\" para el cliente Cliente Test 3. El proyecto está pendiente de aprobación por parte del administrador.",
+      "data": {
+        "projectId": 21,
+        "projectName": "INV-021 - Cliente Test 3",
+        "clientName": "Cliente Test 3",
+        "status": "draft"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-22T01:47:56.625Z"
+    },
+    {
+      "id": 1763923699428.026,
+      "userId": 1,
+      "type": "project_created",
+      "title": "📋 Nuevo Proyecto Creado",
+      "message": "Ana LÃ³pez ha creado el proyecto \"ROOFING - Roofing Shingles\" para Ana LÃ³pez. Pendiente de aprobación.",
+      "data": {
+        "projectId": 22,
+        "projectName": "ROOFING - Roofing Shingles",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "status": "draft"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T18:48:19.428Z"
+    },
+    {
+      "id": 1763923699428.751,
+      "userId": 2,
+      "type": "project_created",
+      "title": "📋 Nuevo Proyecto Creado",
+      "message": "Ana LÃ³pez ha creado el proyecto \"ROOFING - Roofing Shingles\" para Ana LÃ³pez. Pendiente de aprobación.",
+      "data": {
+        "projectId": 22,
+        "projectName": "ROOFING - Roofing Shingles",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "status": "draft"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T18:48:19.428Z"
+    },
+    {
+      "id": 1763928959812,
+      "userId": 3,
+      "type": "project_approved",
+      "title": "✅ Proyecto Aprobado",
+      "message": "Tu proyecto \"ROOFING - Roofing Shingles\" ha sido aprobado por Admin User con un costo de $844.25. Se procederá a asignar un instalador.",
+      "data": {
+        "projectId": 22,
+        "projectName": "ROOFING - Roofing Shingles",
+        "totalCost": 844.25,
+        "approvedBy": "Admin User",
+        "approvedAt": "2025-11-23T20:15:59.812Z",
+        "status": "approved"
+      },
+      "isRead": true,
+      "createdAt": "2025-11-23T20:15:59.812Z"
+    },
+    {
+      "id": 1763932059271.9858,
+      "userId": 1,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"ROOFING - Roofing Shingles\" para aprobación. Total: $83.75",
+      "data": {
+        "projectId": 1006,
+        "projectName": "ROOFING - Roofing Shingles",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 83.75,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T21:07:39.271Z"
+    },
+    {
+      "id": 1763932059271.8384,
+      "userId": 2,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"ROOFING - Roofing Shingles\" para aprobación. Total: $83.75",
+      "data": {
+        "projectId": 1006,
+        "projectName": "ROOFING - Roofing Shingles",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 83.75,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T21:07:39.271Z"
+    },
+    {
+      "id": 1763932345415.8555,
+      "userId": 1,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"ROOFING - EPDM Rubber Roofing\" para aprobación. Total: $12075.00",
+      "data": {
+        "projectId": 1007,
+        "projectName": "ROOFING - EPDM Rubber Roofing",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 12075,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T21:12:25.415Z"
+    },
+    {
+      "id": 1763932345415.4143,
+      "userId": 2,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"ROOFING - EPDM Rubber Roofing\" para aprobación. Total: $12075.00",
+      "data": {
+        "projectId": 1007,
+        "projectName": "ROOFING - EPDM Rubber Roofing",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 12075,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T21:12:25.415Z"
+    },
+    {
+      "id": 1763932637538.0908,
+      "userId": 1,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"SIDING - James Hardy\" para aprobación. Total: $31.25",
+      "data": {
+        "projectId": 1008,
+        "projectName": "SIDING - James Hardy",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 31.25,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T21:17:17.538Z"
+    },
+    {
+      "id": 1763932637538.4321,
+      "userId": 2,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"SIDING - James Hardy\" para aprobación. Total: $31.25",
+      "data": {
+        "projectId": 1008,
+        "projectName": "SIDING - James Hardy",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 31.25,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T21:17:17.538Z"
+    },
+    {
+      "id": 1763936779987.3442,
+      "userId": 1,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"ROOFING - Roofing Shingles\" para aprobación. Total: $168.75",
+      "data": {
+        "projectId": 1009,
+        "projectName": "ROOFING - Roofing Shingles",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 168.75,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T22:26:19.987Z"
+    },
+    {
+      "id": 1763936779987.8596,
+      "userId": 2,
+      "type": "project_pending_approval",
+      "title": "📋 Proyecto Pendiente de Aprobación",
+      "message": "Ana LÃ³pez ha enviado el proyecto \"ROOFING - Roofing Shingles\" para aprobación. Total: $168.75",
+      "data": {
+        "projectId": 1009,
+        "projectName": "ROOFING - Roofing Shingles",
+        "clientName": "Ana LÃ³pez",
+        "createdBy": "Ana LÃ³pez",
+        "totalCost": 168.75,
+        "status": "pending_approval"
+      },
+      "isRead": false,
+      "createdAt": "2025-11-23T22:26:19.987Z"
+    }
+  ],
+  "contracts": [],
+  "incidents": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "projectName": "INV-001 - John Johnson",
+      "incidentInvoiceNumber": "INV-001-INC-001",
+      "title": "Daño en estructura del techo durante instalación",
+      "description": "Durante la instalación se descubrió daño estructural previo en las vigas que requiere reparación antes de continuar",
+      "type": "damage",
+      "priority": "high",
+      "status": "approved",
+      "items": [
+        {
+          "productId": 17,
+          "productName": "Metal Bar 10FT",
+          "quantity": 8,
+          "unitPrice": 13
+        },
+        {
+          "productId": 19,
+          "productName": "Screws Bucket",
+          "quantity": 1,
+          "unitPrice": 285
+        }
+      ],
+      "totalCost": 389,
+      "createdBy": "Carlos Rodríguez",
+      "createdAt": "2024-12-20T11:30:00Z",
+      "approvedBy": "Admin User",
+      "approvedAt": "2024-12-20T13:00:00Z",
+      "resolvedAt": null,
+      "updatedBy": "Admin User",
+      "updatedAt": "2024-12-20T13:00:00Z",
+      "history": [
+        {
+          "action": "created",
+          "user": "Carlos Rodríguez",
+          "timestamp": "2024-12-20T11:30:00Z",
+          "comment": "Incidencia creada: Daño en estructura del techo durante instalación"
+        },
+        {
+          "action": "approved",
+          "user": "Admin User",
+          "timestamp": "2024-12-20T13:00:00Z",
+          "comment": "Aprobado. Proceder con reparación estructural"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "projectId": 2,
+      "projectName": "INV-002 - María López",
+      "incidentInvoiceNumber": "INV-002-INC-001",
+      "title": "Material adicional requerido",
+      "description": "El área real del techo es 15% mayor a lo estimado inicialmente. Se requiere material adicional",
+      "type": "material_shortage",
+      "priority": "medium",
+      "status": "completed",
+      "items": [
+        {
+          "productId": 11,
+          "productName": "EPDM .60 10X100",
+          "quantity": 1,
+          "unitPrice": 1200
+        },
+        {
+          "productId": 20,
+          "productName": "Glue Bucket",
+          "quantity": 1,
+          "unitPrice": 330
+        }
+      ],
+      "totalCost": 1530,
+      "createdBy": "Carlos Rodríguez",
+      "createdAt": "2024-12-21T10:00:00Z",
+      "approvedBy": "Juan Pablo Vega",
+      "approvedAt": "2024-12-21T11:30:00Z",
+      "resolvedAt": "2024-12-22T14:00:00Z",
+      "updatedBy": "Carlos Rodríguez",
+      "updatedAt": "2024-12-22T14:00:00Z",
+      "history": [
+        {
+          "action": "created",
+          "user": "Carlos Rodríguez",
+          "timestamp": "2024-12-21T10:00:00Z",
+          "comment": "Incidencia creada: Material adicional requerido"
+        },
+        {
+          "action": "approved",
+          "user": "Juan Pablo Vega",
+          "timestamp": "2024-12-21T11:30:00Z",
+          "comment": "Aprobado por departamento de compras. Material ordenado"
+        },
+        {
+          "action": "in_progress",
+          "user": "Carlos Rodríguez",
+          "timestamp": "2024-12-22T08:00:00Z",
+          "comment": "Material recibido, reiniciando trabajo"
+        },
+        {
+          "action": "completed",
+          "user": "Carlos Rodríguez",
+          "timestamp": "2024-12-22T14:00:00Z",
+          "comment": "Trabajo adicional completado exitosamente"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "projectId": 5,
+      "projectName": "INV-005 - María González",
+      "incidentInvoiceNumber": "INV-005-INC-001",
+      "title": "Solicitud de cambio del cliente - Upgrade de sistema",
+      "description": "Cliente solicita upgrade a sistema premium con funcionalidades adicionales",
+      "type": "change_order",
+      "priority": "low",
+      "status": "pending",
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Cámara 4K Premium",
+          "quantity": 2,
+          "unitPrice": 150
+        },
+        {
+          "productId": 4,
+          "productName": "Panel de Control Avanzado",
+          "quantity": 1,
+          "unitPrice": 200
+        }
+      ],
+      "totalCost": 500,
+      "createdBy": "Ana López",
+      "createdAt": "2024-12-24T15:00:00Z",
+      "approvedBy": null,
+      "approvedAt": null,
+      "resolvedAt": null,
+      "updatedBy": null,
+      "updatedAt": null,
+      "history": [
+        {
+          "action": "created",
+          "user": "Ana López",
+          "timestamp": "2024-12-24T15:00:00Z",
+          "comment": "Incidencia creada: Solicitud de cambio del cliente - Upgrade de sistema"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "projectId": 8,
+      "projectName": "INV-008 - Jorge Ramírez",
+      "incidentInvoiceNumber": "INV-008-INC-001",
+      "title": "Componentes adicionales dañados por cortocircuito",
+      "description": "El cortocircuito dañó más componentes de lo estimado inicialmente",
+      "type": "extra_work",
+      "priority": "critical",
+      "status": "in_progress",
+      "items": [
+        {
+          "productId": 3,
+          "productName": "Transformador",
+          "quantity": 1,
+          "unitPrice": 85
+        },
+        {
+          "productId": 8,
+          "productName": "Cable blindado 50m",
+          "quantity": 1,
+          "unitPrice": 120
+        }
+      ],
+      "totalCost": 205,
+      "createdBy": "Laura Martínez",
+      "createdAt": "2024-12-22T09:30:00Z",
+      "approvedBy": "Admin User",
+      "approvedAt": "2024-12-22T10:00:00Z",
+      "resolvedAt": null,
+      "updatedBy": "Laura Martínez",
+      "updatedAt": "2024-12-22T11:00:00Z",
+      "history": [
+        {
+          "action": "created",
+          "user": "Laura Martínez",
+          "timestamp": "2024-12-22T09:30:00Z",
+          "comment": "Incidencia creada: Componentes adicionales dañados por cortocircuito"
+        },
+        {
+          "action": "approved",
+          "user": "Admin User",
+          "timestamp": "2024-12-22T10:00:00Z",
+          "comment": "Aprobado de emergencia. Proceder con reparación"
+        },
+        {
+          "action": "in_progress",
+          "user": "Laura Martínez",
+          "timestamp": "2024-12-22T11:00:00Z",
+          "comment": "Reparación en progreso"
+        }
+      ]
+    },
+    {
+      "id": 1763775117877,
+      "projectId": 1,
+      "incidentInvoiceNumber": "INC-00005",
+      "type": "damage",
+      "priority": "high",
+      "title": "Test Incident from Form",
+      "description": "Test description from form",
+      "totalCost": 750,
+      "status": "pending",
+      "createdAt": "2025-11-22T01:31:57.877Z",
+      "createdByUser": {
+        "name": "Admin"
+      }
+    },
+    {
+      "id": 1763775167496,
+      "projectId": 1,
+      "incidentInvoiceNumber": "INC-00006",
+      "type": "change_order",
+      "priority": "medium",
+      "title": "asdasd",
+      "description": "asdasd",
+      "totalCost": 789,
+      "status": "completed",
+      "createdAt": "2025-11-22T01:32:47.496Z",
+      "createdByUser": {
+        "name": "Admin"
+      },
+      "updatedAt": "2025-11-23T18:05:04.468Z",
+      "approvedByUserId": 1,
+      "history": [
+        {
+          "id": 1763775253655,
+          "action": "approved",
+          "userId": 1,
+          "username": "Admin",
+          "comment": "Test approval",
+          "createdAt": "2025-11-22T01:34:13.655Z"
+        },
+        {
+          "id": 1763775295788,
+          "action": "approved",
+          "userId": 1,
+          "username": "Admin",
+          "comment": "Incidencia aprobada",
+          "createdAt": "2025-11-22T01:34:55.788Z"
+        },
+        {
+          "id": 1763775301792,
+          "action": "in_progress",
+          "userId": 1,
+          "username": "Admin",
+          "comment": "Trabajo iniciado",
+          "createdAt": "2025-11-22T01:35:01.792Z"
+        },
+        {
+          "id": 1763921104468,
+          "action": "completed",
+          "userId": 1,
+          "username": "Admin",
+          "comment": "Trabajo completado exitosamente",
+          "createdAt": "2025-11-23T18:05:04.468Z"
+        }
+      ]
+    }
+  ]
+}

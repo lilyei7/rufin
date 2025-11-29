@@ -1,0 +1,457 @@
+// 🎯 NOTIFICATION SERVICE - SISTEMA DE NOTIFICACIONES AUTOMÁTICAS
+// 📅 Fecha: 18 de noviembre de 2025
+// ✅ Estado: SISTEMA COMPLETO DE NOTIFICACIONES
+//
+// 🚫 REGLAS IMPORTANTES:
+// - Todas las notificaciones siguen la lógica de negocio
+// - Cada rol recibe solo notificaciones relevantes
+// - Las notificaciones se generan automáticamente en los endpoints
+// - Mantener consistencia en tipos y mensajes
+//
+// 📋 TIPOS DE NOTIFICACIONES:
+// - project_created: Cuando un vendedor crea un proyecto
+// - project_pending_approval: Proyecto esperando aprobación de compras
+// - project_approved: Proyecto aprobado
+// - installer_assigned: Instalador asignado a proyecto
+// - budget_request: Solicitud de presupuesto al instalador
+// - budget_proposed: Instalador propone presupuesto
+// - budget_accepted: Presupuesto aceptado
+// - budget_rejected: Presupuesto rechazado
+// - project_started: Proyecto iniciado
+// - project_completed: Proyecto completado
+// - payment_approved: Pago aprobado
+// - payment_received: Pago recibido por instalador
+
+import fs from 'fs';
+import path from 'path';
+
+const dataFilePath = path.join(process.cwd(), 'public', 'data.json');
+
+// Helper function to read data
+function readData() {
+  const fileContents = fs.readFileSync(dataFilePath, 'utf8');
+  return JSON.parse(fileContents);
+}
+
+// Helper function to write data
+function writeData(data: any) {
+  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+}
+
+// Helper function to get user by ID
+function getUserById(userId: number) {
+  const data = readData();
+  return data.users?.find((u: any) => u.id === userId);
+}
+
+// Helper function to get project by ID
+function getProjectById(projectId: number) {
+  const data = readData();
+  return data.projects?.find((p: any) => p.id === projectId);
+}
+
+// Create notification
+function createNotification(notification: {
+  userId: number;
+  type: string;
+  title: string;
+  message: string;
+  data?: any;
+}) {
+  const fileData = readData();
+  const notifications = fileData.notifications || [];
+
+  const newNotification = {
+    id: Math.max(...notifications.map((n: any) => n.id), 0) + 1,
+    userId: notification.userId,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    data: notification.data || {},
+    isRead: false,
+    createdAt: new Date().toISOString()
+  };
+
+  notifications.push(newNotification);
+  writeData({ ...fileData, notifications });
+
+  return newNotification;
+}
+
+// 🎯 FUNCIONES DE NOTIFICACIONES POR EVENTO
+
+export const NotificationService = {
+  // Cuando un vendedor crea un proyecto
+  projectCreated: (project: any, createdByUserId: number) => {
+    const creator = getUserById(createdByUserId);
+
+    // Notificación al creador
+    createNotification({
+      userId: createdByUserId,
+      type: 'project_created',
+      title: 'Proyecto creado exitosamente',
+      message: `Has creado el proyecto '${project.projectName}' para el cliente ${project.clientName}`,
+      data: {
+        projectId: project.id,
+        clientName: project.clientName,
+        projectName: project.projectName
+      }
+    });
+
+    // Notificación a compras para aprobación (si no es admin)
+    if (creator?.role !== 'admin') {
+      const purchasingUsers = readData().users?.filter((u: any) => u.role === 'purchasing') || [];
+      purchasingUsers.forEach((user: any) => {
+        createNotification({
+          userId: user.id,
+          type: 'project_pending_approval',
+          title: 'Proyecto pendiente de aprobación',
+          message: `Nuevo proyecto '${project.projectName}' requiere aprobación de compras`,
+          data: {
+            projectId: project.id,
+            clientName: project.clientName,
+            totalCost: project.totalCost
+          }
+        });
+      });
+
+      // Notificación a admin
+      const adminUsers = readData().users?.filter((u: any) => u.role === 'admin') || [];
+      adminUsers.forEach((user: any) => {
+        createNotification({
+          userId: user.id,
+          type: 'project_pending_approval',
+          title: 'Proyecto pendiente de aprobación',
+          message: `Proyecto '${project.projectName}' ($${project.totalCost}) requiere tu aprobación`,
+          data: {
+            projectId: project.id,
+            clientName: project.clientName,
+            totalCost: project.totalCost
+          }
+        });
+      });
+    }
+  },
+
+  // Cuando un proyecto se envía para aprobación
+  projectPendingApproval: (project: any, submittedByUserId: number) => {
+    // Notificación a compras (rol purchasing) para que apruebe el proyecto
+    const purchasingUsers = readData().users?.filter((u: any) => u.role === 'purchasing') || [];
+    
+    purchasingUsers.forEach((user: any) => {
+      createNotification({
+        userId: user.id,
+        type: 'project_pending_approval',
+        title: 'Proyecto pendiente de aprobación',
+        message: `El proyecto '${project.projectName}' para ${project.clientName} está esperando tu aprobación`,
+        data: {
+          projectId: project.id,
+          clientName: project.clientName,
+          projectName: project.projectName,
+          submittedBy: submittedByUserId
+        }
+      });
+    });
+  },
+
+  // Cuando un proyecto es aprobado
+  projectApproved: (project: any, approvedByUserId: number) => {
+    const projectCreator = getUserById(project.createdBy === 'admin' ? 1 : project.createdBy);
+
+    // Notificación al creador del proyecto
+    if (projectCreator) {
+      createNotification({
+        userId: projectCreator.id,
+        type: 'project_approved',
+        title: 'Proyecto aprobado',
+        message: `Tu proyecto '${project.projectName}' ha sido aprobado`,
+        data: {
+          projectId: project.id,
+          approvedBy: getUserById(approvedByUserId)?.name
+        }
+      });
+    }
+  },
+
+  // Cuando se asigna un instalador
+  installerAssigned: (project: any, assignedByUserId: number) => {
+    let installerId: number | null = null;
+
+    if (project.assignedInstaller === 'Carlos Rodríguez') installerId = 4;
+    else if (project.assignedInstaller === 'Miguel Sánchez') installerId = 5;
+    else if (project.assignedInstaller === 'Laura Martínez') installerId = 6;
+    else if (project.assignedInstaller === 'Sofia Herrera') installerId = 7;
+
+    if (installerId) {
+      const installer = getUserById(installerId);
+      if (installer) {
+        createNotification({
+          userId: installer.id,
+          type: 'installer_assigned',
+          title: 'Proyecto asignado',
+          message: `Te han asignado el proyecto '${project.projectName}' para el cliente ${project.clientName}`,
+          data: {
+            projectId: project.id,
+            clientName: project.clientName,
+            assignedBy: getUserById(assignedByUserId)?.name,
+            scheduledDate: project.scheduledStart
+          }
+        });
+      }
+    }
+
+    // Notificación al creador del proyecto
+    const projectCreator = getUserById(project.createdBy === 'admin' ? 1 : project.createdBy);
+    if (projectCreator) {
+      createNotification({
+        userId: projectCreator.id,
+        type: 'installer_assigned',
+        title: 'Instalador asignado',
+        message: `${project.assignedInstaller} ha sido asignado al proyecto '${project.projectName}'`,
+        data: {
+          projectId: project.id,
+          installerName: project.assignedInstaller,
+          scheduledDate: project.scheduledStart
+        }
+      });
+    }
+  },
+
+  // Solicitud de presupuesto al instalador
+  budgetRequest: (project: any) => {
+    let installerId: number | null = null;
+
+    if (project.assignedInstaller === 'Carlos Rodríguez') installerId = 4;
+    else if (project.assignedInstaller === 'Miguel Sánchez') installerId = 5;
+    else if (project.assignedInstaller === 'Laura Martínez') installerId = 6;
+    else if (project.assignedInstaller === 'Sofia Herrera') installerId = 7;
+
+    if (installerId) {
+      const installer = getUserById(installerId);
+      if (installer) {
+        createNotification({
+          userId: installer.id,
+          type: 'budget_request',
+          title: 'Solicitud de presupuesto',
+          message: `Se solicita presupuesto para el proyecto '${project.projectName}' del cliente ${project.clientName}`,
+          data: {
+            projectId: project.id,
+            clientName: project.clientName,
+            projectName: project.projectName
+          }
+        });
+      }
+    }
+  },
+
+  // Instalador propone presupuesto
+  budgetProposed: (project: any, installerUserId: number) => {
+    const installer = getUserById(installerUserId);
+
+    // Notificación al instalador
+    createNotification({
+      userId: installerUserId,
+      type: 'budget_proposed',
+      title: 'Presupuesto propuesto',
+      message: `Has propuesto un presupuesto de $${project.installerPriceProposal} para el proyecto '${project.projectName}'`,
+      data: {
+        projectId: project.id,
+        proposedPrice: project.installerPriceProposal,
+        comments: project.installerComments
+      }
+    });
+
+    // Notificación a admin/compras
+    const adminUsers = readData().users?.filter((u: any) => u.role === 'admin') || [];
+    adminUsers.forEach((user: any) => {
+      createNotification({
+        userId: user.id,
+        type: 'budget_proposed',
+        title: 'Presupuesto propuesto por instalador',
+        message: `${installer?.name} propone $${project.installerPriceProposal} para '${project.projectName}'`,
+        data: {
+          projectId: project.id,
+          installerName: installer?.name,
+          proposedPrice: project.installerPriceProposal
+        }
+      });
+    });
+  },
+
+  // Presupuesto aceptado
+  budgetAccepted: (project: any) => {
+    let installerId: number | null = null;
+
+    if (project.assignedInstaller === 'Carlos Rodríguez') installerId = 4;
+    else if (project.assignedInstaller === 'Miguel Sánchez') installerId = 5;
+    else if (project.assignedInstaller === 'Laura Martínez') installerId = 6;
+    else if (project.assignedInstaller === 'Sofia Herrera') installerId = 7;
+
+    if (installerId) {
+      const installer = getUserById(installerId);
+      if (installer) {
+      createNotification({
+        userId: installer.id,
+        type: 'budget_accepted',
+        title: 'Presupuesto aceptado',
+        message: `Tu presupuesto de $${project.installerPriceProposal} ha sido aceptado para el proyecto '${project.projectName}'`,
+        data: {
+          projectId: project.id,
+          acceptedPrice: project.installerPriceProposal
+        }
+      });
+    }
+  },
+
+  // Presupuesto rechazado
+  budgetRejected: (project: any, reason: string) => {
+    let installerId: number | null = null;
+
+    if (project.assignedInstaller === 'Carlos Rodríguez') installerId = 4;
+    else if (project.assignedInstaller === 'Miguel Sánchez') installerId = 5;
+    else if (project.assignedInstaller === 'Laura Martínez') installerId = 6;
+    else if (project.assignedInstaller === 'Sofia Herrera') installerId = 7;
+
+    if (installerId) {
+      const installer = getUserById(installerId);
+      if (installer) {
+      createNotification({
+        userId: installer.id,
+        type: 'budget_rejected',
+        title: 'Presupuesto rechazado',
+        message: `Tu presupuesto de $${project.installerPriceProposal} ha sido rechazado. ${reason}`,
+        data: {
+          projectId: project.id,
+          rejectedPrice: project.installerPriceProposal,
+          maxApproved: project.totalCost,
+          reason: reason
+        }
+      });
+    }
+  },
+
+  // Proyecto iniciado
+  projectStarted: (project: any) => {
+    // Notificación al instalador
+    const installer = getUserById(project.assignedInstaller === 'Carlos Rodríguez' ? 4 :
+                                 project.assignedInstaller === 'Miguel Sánchez' ? 5 :
+                                 project.assignedInstaller === 'Laura Martínez' ? 6 :
+                                 project.assignedInstaller === 'Sofia Herrera' ? 7 : null);
+
+    if (installer) {
+      createNotification({
+        userId: installer.id,
+        type: 'project_started',
+        title: 'Proyecto iniciado',
+        message: `Has iniciado el trabajo en el proyecto '${project.projectName}'`,
+        data: {
+          projectId: project.id,
+          startDate: new Date().toISOString()
+        }
+      });
+    }
+
+    // Notificación al creador del proyecto
+    const projectCreator = getUserById(project.createdBy === 'admin' ? 1 : project.createdBy);
+    if (projectCreator) {
+      createNotification({
+        userId: projectCreator.id,
+        type: 'project_started',
+        title: 'Proyecto en progreso',
+        message: `El proyecto '${project.projectName}' ha sido iniciado por ${project.assignedInstaller}`,
+        data: {
+          projectId: project.id,
+          installerName: project.assignedInstaller,
+          startDate: new Date().toISOString()
+        }
+      });
+    }
+  },
+
+  // Proyecto completado
+  projectCompleted: (project: any) => {
+    // Notificación al instalador
+    const installer = getUserById(project.assignedInstaller === 'Carlos Rodríguez' ? 4 :
+                                 project.assignedInstaller === 'Miguel Sánchez' ? 5 :
+                                 project.assignedInstaller === 'Laura Martínez' ? 6 :
+                                 project.assignedInstaller === 'Sofia Herrera' ? 7 : null);
+
+    if (installer) {
+      createNotification({
+        userId: installer.id,
+        type: 'project_completed',
+        title: 'Proyecto completado',
+        message: `Has completado el proyecto '${project.projectName}'. Esperando aprobación de pago`,
+        data: {
+          projectId: project.id,
+          completionDate: new Date().toISOString()
+        }
+      });
+    }
+
+    // Notificación al creador del proyecto
+    const projectCreator = getUserById(project.createdBy === 'admin' ? 1 : project.createdBy);
+    if (projectCreator) {
+      createNotification({
+        userId: projectCreator.id,
+        type: 'project_completed',
+        title: 'Proyecto completado',
+        message: `El proyecto '${project.projectName}' ha sido completado por ${project.assignedInstaller}`,
+        data: {
+          projectId: project.id,
+          installerName: project.assignedInstaller,
+          completionDate: new Date().toISOString()
+        }
+      });
+    }
+  },
+
+  // Pago aprobado
+  paymentApproved: (project: any, approvedByUserId: number) => {
+    // Notificación al instalador
+    const installer = getUserById(project.assignedInstaller === 'Carlos Rodríguez' ? 4 :
+                                 project.assignedInstaller === 'Miguel Sánchez' ? 5 :
+                                 project.assignedInstaller === 'Laura Martínez' ? 6 :
+                                 project.assignedInstaller === 'Sofia Herrera' ? 7 : null);
+
+    if (installer) {
+      createNotification({
+        userId: installer.id,
+        type: 'payment_received',
+        title: 'Pago recibido',
+        message: `Has recibido el pago de $${project.installerPayment} por el proyecto '${project.projectName}'`,
+        data: {
+          projectId: project.id,
+          amount: project.installerPayment
+        }
+      });
+    }
+
+    // Notificación a admin
+    const adminUsers = readData().users?.filter((u: any) => u.role === 'admin') || [];
+    adminUsers.forEach((user: any) => {
+      createNotification({
+        userId: user.id,
+        type: 'payment_approved',
+        title: 'Pago aprobado',
+        message: `Pago de $${project.installerPayment} aprobado para el proyecto '${project.projectName}'`,
+        data: {
+          projectId: project.id,
+          amount: project.installerPayment,
+          installerName: project.assignedInstaller
+        }
+      });
+    });
+  },
+
+  // Método genérico para crear notificaciones
+  createNotification: (notification: {
+    userId: number;
+    type: string;
+    title: string;
+    message: string;
+    data?: any;
+  }) => {
+    createNotification(notification);
+  }
+};

@@ -1,0 +1,114 @@
+/* Estilos personalizados para el calendario */
+
+/* Estilos generales */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EAB839;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a532;
+}
+
+/* Animaciones suaves */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Aplicar animaciones */
+.bg-white {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Estilos para la vista de mes */
+.month-view-grid {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilos para la vista de semana */
+.week-view-grid {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Transiciones suaves */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Sombras personalizadas */
+.shadow-lg {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Bordes redondeados */
+.rounded-xl {
+  border-radius: 12px !important;
+}
+
+/* Colores de fondo con gradiente */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, #121313, #2a2a2a) !important;
+}
+
+/* Hover effects */
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Modal backdrop */
+.fixed.inset-0 {
+  animation: fadeIn 0.2s ease-out;
+}
+
+  border-radius: 0;
+}
+
+.calendar-container .react-calendar__tile--rangeStart {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background: #121313;
+  color: white;
+}
+
+.calendar-container .react-calendar__tile--rangeEnd {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #121313;
+  color: white;
+}
+
+.calendar-container .react-calendar__tile--rangeBothEnds {
+  border-radius: 6px;
+  background: #121313;
+  color: white;
+}

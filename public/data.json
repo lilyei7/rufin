@@ -1,0 +1,423 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "ROOFING",
+      "description": "Sistemas de techumbre",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 2,
+      "name": "SIDING",
+      "description": "Recubrimientos de fachada",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 3,
+      "name": "GUTTERS",
+      "description": "Sistemas de drenaje",
+      "type": "main",
+      "parentCategoryId": null
+    },
+    {
+      "id": 4,
+      "name": "Roofing Shingles",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "EPDM Rubber Roofing",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "TPO Roofing",
+      "type": "sub",
+      "parentCategoryId": 1
+    },
+    {
+      "id": 7,
+      "name": "Norandex Vinyl",
+      "type": "sub",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 8,
+      "name": "James Hardy",
+      "type": "sub",
+      "parentCategoryId": 2
+    },
+    {
+      "id": 9,
+      "name": "5K",
+      "type": "sub",
+      "parentCategoryId": 3
+    },
+    {
+      "id": 10,
+      "name": "6K",
+      "type": "sub",
+      "parentCategoryId": 3
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "ASPHALT SHINGLES",
+      "categoryId": 4,
+      "unitPrice": 50,
+      "unitType": "bundle"
+    },
+    {
+      "id": 2,
+      "name": "REEMPLAZO DE BOOTS",
+      "categoryId": 4,
+      "unitPrice": 25,
+      "unitType": "unit"
+    },
+    {
+      "id": 3,
+      "name": "DRIP EDGE FLASHING",
+      "categoryId": 4,
+      "unitPrice": 8.75,
+      "unitType": "ft"
+    },
+    {
+      "id": 4,
+      "name": "FLASHING CHIMENEA-CHICA",
+      "categoryId": 4,
+      "unitPrice": 85,
+      "unitType": "unit"
+    },
+    {
+      "id": 5,
+      "name": "FLASHING CHIMENEA-MEDIANA",
+      "categoryId": 4,
+      "unitPrice": 125,
+      "unitType": "unit"
+    },
+    {
+      "id": 6,
+      "name": "FLASHING CHIMENEA-GRANDE",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "unit"
+    },
+    {
+      "id": 7,
+      "name": "PEEL AND STICK ROOF LEAK BARRIER",
+      "categoryId": 4,
+      "unitPrice": 65,
+      "unitType": "roll"
+    },
+    {
+      "id": 8,
+      "name": "SYNTHETIC ROOFING UNDERLAYMENT",
+      "categoryId": 4,
+      "unitPrice": 35.5,
+      "unitType": "roll"
+    },
+    {
+      "id": 9,
+      "name": "COIL ROOFING NAILS",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "coil"
+    },
+    {
+      "id": 10,
+      "name": "PLASTIC CAP ROOFING NAILS",
+      "categoryId": 4,
+      "unitPrice": 0,
+      "unitType": "box"
+    },
+    {
+      "id": 11,
+      "name": "EPDM .60 10X100",
+      "categoryId": 5,
+      "unitPrice": 1200,
+      "unitType": "roll"
+    },
+    {
+      "id": 12,
+      "name": "INSOLATION 1\"",
+      "categoryId": 5,
+      "unitPrice": 30,
+      "unitType": "sheet"
+    },
+    {
+      "id": 13,
+      "name": "INSOLATION 2\"",
+      "categoryId": 5,
+      "unitPrice": 45,
+      "unitType": "sheet"
+    },
+    {
+      "id": 14,
+      "name": "FLASHING 12IN X 50 FT",
+      "categoryId": 5,
+      "unitPrice": 420,
+      "unitType": "roll"
+    },
+    {
+      "id": 15,
+      "name": "CORNERS",
+      "categoryId": 5,
+      "unitPrice": 20,
+      "unitType": "unit"
+    },
+    {
+      "id": 16,
+      "name": "JOINT COVER",
+      "categoryId": 5,
+      "unitPrice": 350,
+      "unitType": "roll"
+    },
+    {
+      "id": 17,
+      "name": "METAL BAR 10FT",
+      "categoryId": 5,
+      "unitPrice": 13,
+      "unitType": "bar"
+    },
+    {
+      "id": 18,
+      "name": "PIPE BOOTS",
+      "categoryId": 5,
+      "unitPrice": 79,
+      "unitType": "unit"
+    },
+    {
+      "id": 19,
+      "name": "SCREWS BUCKET (1000)",
+      "categoryId": 5,
+      "unitPrice": 285,
+      "unitType": "bucket"
+    },
+    {
+      "id": 20,
+      "name": "GLUE BUCKET",
+      "categoryId": 5,
+      "unitPrice": 330,
+      "unitType": "bucket"
+    },
+    {
+      "id": 21,
+      "name": "PRIMER GALLON",
+      "categoryId": 5,
+      "unitPrice": 150,
+      "unitType": "gallon"
+    },
+    {
+      "id": 22,
+      "name": "TAPE 50 FT",
+      "categoryId": 5,
+      "unitPrice": 0,
+      "unitType": "roll"
+    },
+    {
+      "id": 23,
+      "name": "PLATES BUCKET",
+      "categoryId": 5,
+      "unitPrice": 210,
+      "unitType": "bucket"
+    },
+    {
+      "id": 24,
+      "name": "CAULKING",
+      "categoryId": 5,
+      "unitPrice": 17,
+      "unitType": "tube"
+    },
+    {
+      "id": 25,
+      "name": "HardieTrim NT3 - Outside/Inside Corner",
+      "categoryId": 8,
+      "unitPrice": 12.5,
+      "unitType": "piece",
+      "usage": "Recommended"
+    },
+    {
+      "id": 26,
+      "name": "HardieTrim NT3 - Windows",
+      "categoryId": 8,
+      "unitPrice": 18.75,
+      "unitType": "piece",
+      "usage": "Recommended"
+    },
+    {
+      "id": 27,
+      "name": "Flat Tabs",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Recommended",
+      "notes": "1 tab per linear ft, 1 box = 100 tabs"
+    },
+    {
+      "id": 28,
+      "name": "Corner Tabs",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Recommended",
+      "notes": "1 tab per 2 linear ft, 1 box = 50 tabs"
+    },
+    {
+      "id": 29,
+      "name": "Color Matching Caulking",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "tube",
+      "usage": "Required"
+    },
+    {
+      "id": 30,
+      "name": "ColorPlus Touch-Up Kit",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "kit",
+      "usage": "Required"
+    },
+    {
+      "id": 31,
+      "name": "ColorMatch Aluminum Coil",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "coil",
+      "usage": "Required"
+    },
+    {
+      "id": 32,
+      "name": "HardieWrap",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Recommended"
+    },
+    {
+      "id": 33,
+      "name": "Window Flashing",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Required"
+    },
+    {
+      "id": 34,
+      "name": "Seam Tape",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Required"
+    },
+    {
+      "id": 35,
+      "name": "Insulation Underlayment",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "roll",
+      "usage": "Recommended"
+    },
+    {
+      "id": 36,
+      "name": "Siding Gauges",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "set",
+      "usage": "Recommended"
+    },
+    {
+      "id": 37,
+      "name": "Galvanized Nails (stainless 1 mile from shore)",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 38,
+      "name": "Clipped Head Finish Trim Nails",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 39,
+      "name": "Crown Staples",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "box",
+      "usage": "Required"
+    },
+    {
+      "id": 40,
+      "name": "HardieBlade",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "blade",
+      "usage": "Required"
+    },
+    {
+      "id": 41,
+      "name": "Best Practice Manual",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "manual",
+      "usage": "Required"
+    },
+    {
+      "id": 42,
+      "name": "Tarp - To Cover Material on Site",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "tarp",
+      "usage": "Required"
+    },
+    {
+      "id": 43,
+      "name": "Wood Shims - Window Trim",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "pack",
+      "usage": "Recommended"
+    },
+    {
+      "id": 44,
+      "name": "SturdiBuild Mounting Blocks",
+      "categoryId": 8,
+      "unitPrice": 0,
+      "unitType": "block",
+      "usage": "Recommended"
+    }
+  ],
+  "projects": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Super Admin",
+      "username": "superadmin",
+      "email": "superadmin@example.com",
+      "role": "super_admin",
+      "password": "superadmin123",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Admin User",
+      "username": "admin",
+      "email": "admin@example.com",
+      "role": "admin",
+      "password": "admin",
+      "createdAt": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "contracts": [],
+  "incidents": [],
+  "notifications": []
+}

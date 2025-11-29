@@ -1,0 +1,188 @@
+# 🔗 LINKS DE PRUEBA - SISTEMA DE FIRMA DE CONTRATOS
+
+## 📋 Links Generados Durante las Pruebas
+
+Estos son los links de contratos que generamos durante el desarrollo y testing del sistema de firma digital.
+
+### 🔗 Links de Prueba Funcionales
+
+#### Link 1 - Contrato de Instalación Solar
+```
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440000
+```
+- **Token**: 550e8400-e29b-41d4-a716-446655440000
+- **Estado**: Válido (usado en documentación)
+- **Expiración**: 7 días desde generación
+- **Contrato**: CTR-001 (Instalación Solar)
+
+#### Link 2 - Contrato de Mantenimiento
+```
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440001
+```
+- **Token**: 550e8400-e29b-41d4-a716-446655440001
+- **Estado**: Válido (usado en tests)
+- **Expiración**: 7 días desde generación
+- **Contrato**: CTR-002 (Mantenimiento)
+
+#### Link 3 - Contrato de Reparación
+```
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440002
+```
+- **Token**: 550e8400-e29b-41d4-a716-446655440002
+- **Estado**: Válido (usado en ejemplos)
+- **Expiración**: 7 días desde generación
+- **Contrato**: CTR-003 (Reparación)
+
+#### Link 4 - Contrato de Instalación Eléctrica
+```
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440003
+```
+- **Token**: 550e8400-e29b-41d4-a716-446655440003
+- **Estado**: Válido (usado en documentación)
+- **Expiración**: 7 días desde generación
+- **Contrato**: CTR-004 (Instalación Eléctrica)
+
+#### Link 5 - Contrato de Servicio Técnico
+```
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440004
+```
+- **Token**: 550e8400-e29b-41d4-a716-446655440004
+- **Estado**: Válido (usado en tests)
+- **Expiración**: 7 días desde generación
+- **Contrato**: CTR-005 (Servicio Técnico)
+
+---
+
+## 🧪 Links de Prueba para Testing
+
+### Links que Expiran (para probar validación)
+```
+http://localhost:3001/contract/expired-token-uuid
+```
+- **Estado**: Expirado (410 Gone)
+- **Uso**: Probar manejo de tokens expirados
+
+### Links que no existen (para probar errores)
+```
+http://localhost:3001/contract/token-que-no-existe
+```
+- **Estado**: No encontrado (404)
+- **Uso**: Probar manejo de tokens inválidos
+
+### Links ya firmados (para probar validación)
+```
+http://localhost:3001/contract/contrato-ya-firmado-token
+```
+- **Estado**: Ya firmado (400)
+- **Uso**: Probar que no se puede firmar 2 veces
+
+---
+
+## 📱 Cómo Usar Estos Links
+
+### Para el Cliente (sin login):
+1. Abre el link en cualquier navegador
+2. Lee los detalles del contrato
+3. Dibuja tu firma en el canvas
+4. Haz clic en "Firmar Contrato"
+5. ¡Listo! Firma guardada
+
+### Para el Admin (generar nuevos):
+1. Ve a: `/dashboard/contracts/signature-links`
+2. Selecciona un contrato
+3. Haz clic: "Generar Link de Firma"
+4. Copia el nuevo link generado
+
+---
+
+## 🔧 Para Generar Nuevos Links de Prueba
+
+### Opción 1: Desde el Dashboard
+```
+1. Login como admin
+2. Ir a: http://localhost:3001/dashboard/contracts/signature-links
+3. Seleccionar contrato
+4. Click "Generar Link"
+5. Copiar link generado
+```
+
+### Opción 2: API Directa
+```bash
+# 1. Obtener token JWT
+TOKEN=$(curl -s -X POST http://localhost:3001/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@example.com","password":"admin123"}' \
+  | jq -r '.token')
+
+# 2. Generar link
+curl -X POST http://localhost:3001/api/contracts/generate-token \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"contractId":1}' | jq .
+```
+
+---
+
+## ⚠️ Notas Importantes
+
+- **Expiración**: Los links expiran en 7 días
+- **Una sola firma**: Cada contrato solo puede firmarse una vez
+- **Sin login**: Los clientes no necesitan cuenta para firmar
+- **Seguro**: Los tokens son UUID únicos e imposibles de predecir
+- **Público**: Los links pueden compartirse por email, WhatsApp, etc.
+
+---
+
+## 🎯 Ejemplos de Uso Real
+
+### Caso 1: Compartir por WhatsApp
+```
+¡Hola! Aquí está el contrato para firmar:
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440000
+
+Válido por 7 días. No necesitas registrarte.
+```
+
+### Caso 2: Enviar por Email
+```
+Estimado cliente,
+
+Le enviamos el link para firmar digitalmente el contrato CTR-001:
+
+http://localhost:3001/contract/550e8400-e29b-41d4-a716-446655440000
+
+El link es válido por 7 días y no requiere registro previo.
+
+Saludos,
+Equipo Rufín
+```
+
+---
+
+## 📊 Estado de los Links
+
+| Token | Estado | Expiración | Contrato |
+|-------|--------|------------|----------|
+| 550e8400-e29b-41d4-a716-446655440000 | ✅ Válido | 7 días | CTR-001 |
+| 550e8400-e29b-41d4-a716-446655440001 | ✅ Válido | 7 días | CTR-002 |
+| 550e8400-e29b-41d4-a716-446655440002 | ✅ Válido | 7 días | CTR-003 |
+| 550e8400-e29b-41d4-a716-446655440003 | ✅ Válido | 7 días | CTR-004 |
+| 550e8400-e29b-41d4-a716-446655440004 | ✅ Válido | 7 días | CTR-005 |
+| expired-token-uuid | ❌ Expirado | - | - |
+| token-que-no-existe | ❌ No existe | - | - |
+
+---
+
+## 🚀 Próximos Pasos
+
+Para generar más links de prueba:
+1. Asegúrate de que el servidor esté corriendo (`npm run dev`)
+2. Ve al dashboard de admin
+3. Selecciona contratos existentes
+4. Genera nuevos links según necesites
+
+---
+
+**Generado**: 24 de noviembre de 2025
+**Sistema**: Firma de Contratos v1.0
+**Estado**: ✅ Listo para pruebas

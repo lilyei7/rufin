@@ -1,0 +1,556 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// ============================================
+// MODELOS DE USUARIOS Y AUTENTICACIÓN
+// ============================================
+
+enum UserRole {
+  super_admin
+  admin
+  purchasing
+  vendor
+  installer
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  name      String
+  email     String   @unique
+  role      UserRole @default(vendor)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  createdProjects      Project[]      @relation("CreatedProjects")
+  approvedProjects     Project[]      @relation("ApprovedProjects")
+  createdIncidents     Incident[]     @relation("CreatedIncidents")
+  approvedIncidents    Incident[]     @relation("ApprovedIncidents")
+  createdQuotes        Quote[]        @relation("CreatedQuotes")
+  notifications        Notification[]
+  projectHistory       ProjectHistory[]
+  incidentHistory      IncidentHistory[]
+  createdContracts     Contract[]     @relation("CreatedContracts")
+  communicationLogs    CommunicationLog[]
+  contractSignatures   ContractSignature[]
+
+  // Nuevas relaciones para contratos de subcontratistas
+  vendorContracts      Contract[]     @relation("VendorContracts")
+  installerContracts   Contract[]     @relation("InstallerContracts")
+
+  // Términos y condiciones
+  termsAcceptedAt      DateTime?
+  termsAcceptedVersion String?
+
+  metadata             Json?
+
+  @@map("users")
+}
+
+// ============================================
+// MODELO DE CLIENTES (para portal)
+// ============================================
+
+model Client {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  phone        String?
+  company      String?
+  address      String?
+  accessCode   String    @unique // Código para acceso al portal
+  active       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relaciones
+  contracts    Contract[]
+
+  @@map("clients")
+}
+
+// ============================================
+// MODELOS DE PRODUCTOS Y CATEGORÍAS
+// ============================================
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  products  Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id         Int      @id @default(autoincrement())
+  name       String
+  categoryId Int
+  unitPrice  Float
+  unitType   String   // m2, unidad, metro, etc.
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relaciones
+  category       Category        @relation(fields: [categoryId], references: [id])
+  projectItems   ProjectItem[]
+  quoteItems     QuoteItem[]
+  incidentItems  IncidentItem[]
+
+  @@map("products")
+}
+
+// ============================================
+// MODELOS DE COTIZACIONES
+// ============================================
+
+enum QuoteStatus {
+  draft
+  sent
+  accepted
+  rejected
+  expired
+}
+
+model Quote {
+  id              Int         @id @default(autoincrement())
+  quoteNumber     String      @unique
+  clientName      String
+  clientEmail     String?
+  clientPhone     String?
+  status          QuoteStatus @default(draft)
+  totalCost       Float
+  validUntil      DateTime
+  notes           String?
+  createdBy       String
+  createdByUserId Int
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  // Relaciones
+  createdByUser User        @relation("CreatedQuotes", fields: [createdByUserId], references: [id])
+  items         QuoteItem[]
+  project       Project?
+  contracts     Contract[]
+
+  @@map("quotes")
+}
+
+model QuoteItem {
+  id        Int      @id @default(autoincrement())
+  quoteId   Int
+  productId Int
+  quantity  Float
+  unitPrice Float
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  quote   Quote   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("quote_items")
+}
+
+// ============================================
+// MODELOS DE PROYECTOS
+// ============================================
+
+enum ProjectStatus {
+  draft
+  preparing
+  materials_ready
+  ready_for_approval
+  pending
+  approved
+  rejected
+  in_progress
+  completed
+  cancelled
+}
+
+model Project {
+  id                Int           @id @default(autoincrement())
+  projectName       String
+  invoiceNumber     String        @unique
+  clientName        String
+  status            ProjectStatus @default(draft)
+  totalCost         Float
+  startDate         DateTime?
+  endDate           DateTime?
+  notes             String?
+  rejectionReason   String?
+  createdBy         String
+  createdByUserId   Int
+  approvedBy        String?
+  approvedByUserId  Int?
+  quoteId           Int?          @unique
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  // Relaciones
+  createdByUser  User              @relation("CreatedProjects", fields: [createdByUserId], references: [id])
+  approvedByUser User?             @relation("ApprovedProjects", fields: [approvedByUserId], references: [id])
+  quote          Quote?            @relation(fields: [quoteId], references: [id])
+  items          ProjectItem[]
+  incidents      Incident[]
+  history        ProjectHistory[]
+  contracts      Contract[]
+  communications CommunicationLog[]
+
+  @@map("projects")
+}
+
+model ProjectItem {
+  id        Int      @id @default(autoincrement())
+  projectId Int
+  productId Int
+  quantity  Float
+  unitPrice Float
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("project_items")
+}
+
+model ProjectHistory {
+  id        Int      @id @default(autoincrement())
+  projectId Int
+  action    String
+  comment   String?
+  userId    Int
+  username  String
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id])
+
+  @@map("project_history")
+}
+
+// ============================================
+// MODELOS DE INCIDENCIAS
+// ============================================
+
+enum IncidentType {
+  change_order
+  extra_work
+  damage
+  material_shortage
+  special
+  other
+}
+
+enum IncidentPriority {
+  low
+  medium
+  high
+  critical
+}
+
+enum IncidentStatus {
+  pending
+  approved
+  rejected
+  in_progress
+  completed
+}
+
+model Incident {
+  id                    Int              @id @default(autoincrement())
+  projectId             Int
+  projectName           String
+  incidentInvoiceNumber String           @unique
+  title                 String
+  description           String?
+  type                  IncidentType
+  priority              IncidentPriority @default(medium)
+  status                IncidentStatus   @default(pending)
+  totalCost             Float            @default(0)
+  createdBy             String
+  createdByUserId       Int
+  approvedBy            String?
+  approvedByUserId      Int?
+  approvedAt            DateTime?
+  resolvedAt            DateTime?
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+
+  // Relaciones
+  project         Project           @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdByUser   User              @relation("CreatedIncidents", fields: [createdByUserId], references: [id])
+  approvedByUser  User?             @relation("ApprovedIncidents", fields: [approvedByUserId], references: [id])
+  items           IncidentItem[]
+  history         IncidentHistory[]
+
+  @@map("incidents")
+}
+
+model IncidentItem {
+  id         Int      @id @default(autoincrement())
+  incidentId Int
+  productId  Int
+  quantity   Float
+  unitPrice  Float
+  createdAt  DateTime @default(now())
+
+  // Relaciones
+  incident Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  product  Product  @relation(fields: [productId], references: [id])
+
+  @@map("incident_items")
+}
+
+model IncidentHistory {
+  id         Int      @id @default(autoincrement())
+  incidentId Int
+  action     String
+  comment    String?
+  userId     Int
+  username   String
+  createdAt  DateTime @default(now())
+
+  // Relaciones
+  incident Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@map("incident_history")
+}
+
+// ============================================
+// MODELO DE NOTIFICACIONES
+// ============================================
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  message   String
+  type      String   // info, warning, success, error
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+// ============================================
+// MODELOS DE CONTRATOS Y FIRMAS DIGITALES
+// ============================================
+
+enum ContractType {
+  project           // Contrato de proyecto con cliente
+  subcontractor     // Contrato con instalador/subcontratista
+  quote             // Contrato de cotización
+  service           // Contrato de servicio
+  maintenance       // Contrato de mantenimiento
+}
+
+enum ContractStatus {
+  draft             // Borrador
+  pending_review    // Pendiente de revisión
+  pending_signature // Pendiente de firma
+  partially_signed  // Parcialmente firmado
+  signed            // Firmado completamente
+  active            // Activo/Vigente
+  completed         // Completado
+  cancelled         // Cancelado
+  expired           // Expirado
+}
+
+enum SignatureStatus {
+  pending           // Pendiente
+  signed            // Firmado
+  rejected          // Rechazado
+}
+
+// Plantillas de contratos reutilizables
+model ContractTemplate {
+  id          Int      @id @default(autoincrement())
+  name        String
+  type        ContractType
+  content     String   @db.Text // HTML/Markdown del contrato
+  variables   Json?    // Variables dinámicas: {client_name}, {amount}, etc.
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  contracts   Contract[]
+
+  @@map("contract_templates")
+}
+
+// Contratos generados
+model Contract {
+  id                    Int            @id @default(autoincrement())
+  contractNumber        String         @unique // CONT-00001
+  type                  ContractType
+  status                ContractStatus @default(draft)
+  title                 String
+  description           String?        @db.Text
+  content               String         @db.Text // Contenido del contrato generado
+  
+  // Referencias
+  templateId            Int?
+  projectId             Int?
+  quoteId               Int?
+  clientId              Int?           // Cliente del portal
+  
+  // Partes del contrato (subcontratistas)
+  vendorId              Int?           // Vendor/Proveedor que firma
+  installerId           Int?           // Instalador que firma
+  
+  // Datos legacy del cliente (si no tiene clientId)
+  clientName            String?
+  clientEmail           String?
+  clientPhone           String?
+  clientAddress         String?
+  
+  // Fechas y valores
+  amount                Float?
+  currency              String         @default("MXN")
+  startDate             DateTime?
+  endDate               DateTime?
+  signatureDeadline     DateTime?
+  
+  // Términos comerciales
+  paymentTerms          String?        @db.Text
+  deliveryTerms         String?        @db.Text
+  penaltyClauses        String?        @db.Text
+  
+  // Control
+  createdByUserId       Int
+  requiresAllSignatures Boolean        @default(true)
+  termsAccepted         Boolean        @default(false)
+  termsAcceptedAt       DateTime?
+  
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  signedAt              DateTime?      // Cuando se completan todas las firmas
+  activatedAt           DateTime?
+  completedAt           DateTime?
+  cancelledAt           DateTime?
+
+  metadata              Json?
+
+  // Relaciones
+  template              ContractTemplate?       @relation(fields: [templateId], references: [id])
+  project               Project?                @relation(fields: [projectId], references: [id])
+  quote                 Quote?                  @relation(fields: [quoteId], references: [id])
+  client                Client?                 @relation(fields: [clientId], references: [id])
+  vendor                User?                   @relation("VendorContracts", fields: [vendorId], references: [id])
+  installer             User?                   @relation("InstallerContracts", fields: [installerId], references: [id])
+  createdByUser         User                    @relation("CreatedContracts", fields: [createdByUserId], references: [id])
+  signatures            ContractSignature[]
+  modifications         ContractModification[]
+  communications        CommunicationLog[]
+
+  @@map("contracts")
+}
+
+// Firmas digitales del contrato
+model ContractSignature {
+  id              Int             @id @default(autoincrement())
+  contractId      Int
+  signerId        Int?            // Usuario del sistema que firma
+  signerName      String
+  signerEmail     String
+  signerRole      String          // client, vendor, installer, admin
+  signerType      String          @default("user") // user, client
+  status          SignatureStatus @default(pending)
+  signatureData   String?         @db.Text // Base64 de la firma
+  signatureType   String          @default("digital") // digital, electronic, handwritten_scan
+  ipAddress       String?
+  location        String?
+  userAgent       String?
+  signedAt        DateTime?
+  rejectedAt      DateTime?
+  rejectionReason String?
+  token           String?         @unique // Token único para firmar
+  tokenExpiresAt  DateTime?
+  createdAt       DateTime        @default(now())
+
+  metadata        Json?
+
+  // Relaciones
+  contract        Contract        @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  signer          User?           @relation(fields: [signerId], references: [id])
+
+  @@map("contract_signatures")
+}
+
+// Modificaciones/Enmiendas al contrato
+model ContractModification {
+  id          Int      @id @default(autoincrement())
+  contractId  Int
+  description String
+  oldValues   Json?    // Valores anteriores
+  newValues   Json?    // Valores nuevos
+  reason      String?
+  approvedBy  String?
+  approvedAt  DateTime?
+  createdAt   DateTime @default(now())
+
+  // Relaciones
+  contract    Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+
+  @@map("contract_modifications")
+}
+
+// Términos y condiciones generales
+model TermsAndConditions {
+  id        Int      @id @default(autoincrement())
+  version   String   @unique // v1.0, v2.0, etc.
+  title     String
+  content   String   @db.Text
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("terms_and_conditions")
+}
+
+// Log de comunicaciones con clientes
+model CommunicationLog {
+  id              Int       @id @default(autoincrement())
+  contractId      Int?
+  projectId       Int?
+  sentByUserId    Int
+  recipientName   String
+  recipientEmail  String
+  subject         String
+  message         String    @db.Text
+  type            String    // email, sms, call, meeting, whatsapp
+  status          String    // sent, delivered, read, failed
+  sentAt          DateTime?
+  readAt          DateTime?
+  createdAt       DateTime  @default(now())
+
+  // Relaciones
+  contract        Contract? @relation(fields: [contractId], references: [id], onDelete: SetNull)
+  project         Project?  @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  sentByUser      User      @relation(fields: [sentByUserId], references: [id])
+
+  @@map("communication_logs")
+}

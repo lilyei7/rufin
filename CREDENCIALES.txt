@@ -1,0 +1,54 @@
+CREDENCIALES DE ACCESO - SISTEMA RUFÍN
+=====================================
+
+BASE DE DATOS: SQLite (./prisma/dev.db)
+
+USUARIOS ACTIVOS:
+=================
+
+SUPER ADMINISTRADOR
+-------------------
+Usuario: superadmin
+Contraseña: superadmin123
+Rol: super_admin
+
+ADMINISTRADOR
+-------------
+Usuario: admin
+Contraseña: admin123
+Rol: admin
+
+VENDEDOR
+--------
+Usuario: jhayco
+Contraseña: vendor123
+Rol: vendor
+
+INSTALADOR
+----------
+Usuario: jorge
+Contraseña: installer123
+Rol: installer
+
+DATOS INICIALES:
+===============
+- Usuarios de ejemplo para cada rol
+- Base de datos migrada y lista para usar
+- Sistema de cotizaciones completamente implementado
+
+LINKS DE ACCESO:
+===============
+Login: http://localhost:3000/login
+Panel Público Cotizaciones: http://localhost:3000/quotes
+Dashboard Vendedor: http://localhost:3000/dashboard/my-quotes
+Admin: http://localhost:3000/dashboard/admin
+Installer: http://localhost:3000/installer/dashboard
+
+IMPORTANTE:
+===========
+- Cambia las contraseñas después del primer acceso
+- Los usuarios tienen roles específicos con permisos diferenciados
+- La base de datos está completamente migrada a SQLite con Prisma ORM
+- TODOS los datos vienen exclusivamente de la base de datos
+- La autenticación usa JWT (Token válido por 24 horas)
+- Las contraseñas se almacenan hasheadas con bcrypt

@@ -1,0 +1,5 @@
+# Server Running Preference
+
+The user has indicated that they will handle running the development server themselves. I should not attempt to start or restart the server unless explicitly requested by the user.
+
+Last updated: November 23, 2025

@@ -1,0 +1,342 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../dev.db"
+}
+
+// ============================================
+// MODELOS PRINCIPALES
+// ============================================
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  name      String
+  email     String?
+  role      String   @default("vendor")
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  createdProjects      Project[]      @relation("CreatedProjects")
+  approvedProjects     Project[]      @relation("ApprovedProjects")
+  assignedProjects     Project[]      @relation("AssignedProjects")
+  createdIncidents     Incident[]     @relation("CreatedIncidents")
+  createdContracts     Contract[]     @relation("CreatedContracts")
+  clientContracts      Contract[]     @relation("ClientContracts")
+  vendorContracts      Contract[]     @relation("VendorContracts")
+  installerContracts   Contract[]     @relation("InstallerContracts")
+  notifications        Notification[]
+  sentMessages         Message[]      @relation("SentMessages")
+  receivedMessages     Message[]      @relation("ReceivedMessages")
+  quotesCreated        Quote[]        @relation("QuotesCreated")
+
+  @@map("users")
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  description String?
+  type      String?
+  parentCategoryId Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  products  Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id         Int      @id @default(autoincrement())
+  name       String
+  categoryId Int
+  unitPrice  Float
+  unitType   String
+  usage      String?
+  notes      String?
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relaciones
+  category       Category        @relation(fields: [categoryId], references: [id])
+  projectItems   ProjectItem[]
+  incidentItems  IncidentItem[]
+  quoteItems     QuoteItem[]     @relation("QuoteItems")
+
+  @@map("products")
+}
+
+// ============================================
+// MODELOS DE COTIZACIONES
+// ============================================
+
+model Quote {
+  id              Int      @id @default(autoincrement())
+  quoteNumber     String   @unique
+  vendorId        Int
+  clientName      String
+  clientEmail     String?
+  clientPhone     String?
+  totalCost       Float    @default(0)
+  description     String?
+  items           QuoteItem[]
+  status          String   @default("draft")  // draft|published|accepted|rejected|expired
+  quoteToken      String   @unique            // Token único para link temporal
+  expiresAt       DateTime?                   // Cuándo expira el link
+  acceptedAt      DateTime?
+  rejectedAt      DateTime?
+  projectId       Int?        @unique              // Relación uno-a-uno con Project (una cotización = un proyecto)
+  downPayment     Float?                          // Anticipo requerido
+  downPaymentReceived Boolean @default(false)     // Si se confirmó el anticipo
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relaciones
+  vendor          User     @relation("QuotesCreated", fields: [vendorId], references: [id])
+  project         Project? @relation(fields: [projectId], references: [id])
+
+  @@map("quotes")
+}
+
+model QuoteItem {
+  id        Int      @id @default(autoincrement())
+  quoteId   Int
+  productId Int
+  productName String  @default("")
+  quantity  Float
+  unitPrice Float
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  quote     Quote    @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  product   Product  @relation("QuoteItems", fields: [productId], references: [id])
+
+  @@map("quote_items")
+}
+
+model Project {
+  id                Int      @id @default(autoincrement())
+  projectName       String
+  invoiceNumber     String   @unique
+  clientName        String
+  status            String   @default("draft")
+  totalCost         Float    @default(0)
+  quoteId           Int?                        // Referencia a la cotización que generó este proyecto
+  downPaymentAmount Float?                      // Monto del anticipo confirmado
+  downPaymentStatus String?                     // pending|confirmed|completed
+  startDate         DateTime?
+  endDate           DateTime?
+  notes             String?
+  rejectionReason   String?
+  createdBy         String
+  createdById       Int?
+  approvedBy        String?
+  approvedById      Int?
+  assignedInstaller String?
+  assignedInstallerId Int?
+  installerPriceProposal Float?
+  installerPriceStatus String?
+  scheduledInstallation DateTime?
+  approvedAt        DateTime?
+  lastModified      DateTime?
+  lastModifiedBy    String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Relaciones
+  createdByUser     User?           @relation("CreatedProjects", fields: [createdById], references: [id])
+  approvedByUser    User?           @relation("ApprovedProjects", fields: [approvedById], references: [id])
+  assignedUser      User?           @relation("AssignedProjects", fields: [assignedInstallerId], references: [id])
+  quote             Quote?
+  items             ProjectItem[]
+  history           ProjectHistory[]
+  incidents         Incident[]
+  contracts         Contract[]
+  messages          Message[]
+
+  @@map("projects")
+}
+
+model ProjectItem {
+  id          Int      @id @default(autoincrement())
+  projectId   Int
+  productId   Int
+  productName String   @default("") // Nombre del producto al momento de crear/guardar
+  quantity    Float
+  unitPrice   Float
+  createdAt   DateTime @default(now())
+
+  // Relaciones
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("project_items")
+}
+
+model ProjectHistory {
+  id        Int      @id @default(autoincrement())
+  projectId Int
+  timestamp DateTime
+  status    String
+  comment   String?
+  user      String
+  action    String?
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@map("project_history")
+}
+
+model Incident {
+  id                      Int      @id @default(autoincrement())
+  projectId               Int
+  incidentInvoiceNumber   String?
+  title                   String
+  description             String
+  type                    String   @default("other")
+  priority                String   @default("medium")
+  status                  String   @default("pending")
+  totalCost               Float    @default(0)
+  createdBy               String
+  createdById             Int?
+  approvedBy              String?
+  approvedById            Int?
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  // Relaciones
+  project                 Project         @relation(fields: [projectId], references: [id])
+  createdByUser           User?           @relation("CreatedIncidents", fields: [createdById], references: [id])
+  items                   IncidentItem[]
+  history                 IncidentHistory[]
+  messages                Message[]
+
+  @@map("incidents")
+}
+
+model IncidentItem {
+  id         Int      @id @default(autoincrement())
+  incidentId Int
+  productId  Int
+  quantity   Float
+  unitPrice  Float
+  createdAt  DateTime @default(now())
+
+  // Relaciones
+  incident Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  product  Product  @relation(fields: [productId], references: [id])
+
+  @@map("incident_items")
+}
+
+model IncidentHistory {
+  id         Int      @id @default(autoincrement())
+  incidentId Int
+  timestamp  DateTime
+  status     String
+  comment    String?
+  user       String
+  action     String?
+  createdAt  DateTime @default(now())
+
+  // Relaciones
+  incident   Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+
+  @@map("incident_history")
+}
+
+model Contract {
+  id              Int      @id @default(autoincrement())
+  contractNumber  String   @unique
+  projectId       Int?
+  incidentId      Int?
+  type            String   @default("project")
+  status          String   @default("draft")
+  title           String
+  description     String?
+  content         String?
+  totalAmount     Float    @default(0)
+  amount          Float    @default(0)
+  finalPrice      Float?
+  currency        String   @default("USD")
+  startDate       String?
+  endDate         String?
+  clientId        Int?
+  vendorId        Int?
+  installerId     Int?
+  clientName      String?
+  signedAt        DateTime?
+  isSigned        Boolean  @default(false)
+  signatureToken  String?  @unique
+  signatureData   String?  // Base64 de la firma
+  expiresAt       DateTime?
+  createdBy       String?
+  createdById     Int?
+  communications  String?  // JSON string
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relaciones
+  project         Project? @relation(fields: [projectId], references: [id])
+  createdByUser   User?   @relation("CreatedContracts", fields: [createdById], references: [id])
+  client          User?   @relation(name: "ClientContracts", fields: [clientId], references: [id])
+  vendor          User?   @relation(name: "VendorContracts", fields: [vendorId], references: [id])
+  installer       User?   @relation(name: "InstallerContracts", fields: [installerId], references: [id])
+  messages        Message[]
+
+  @@map("contracts")
+}
+
+model Message {
+  id          Int      @id @default(autoincrement())
+  projectId   Int?
+  incidentId  Int?
+  contractId  Int?
+  senderId    Int
+  recipientId Int
+  subject     String
+  content     String
+  attachments String?  // JSON array of file paths
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  sender      User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  recipient   User     @relation("ReceivedMessages", fields: [recipientId], references: [id], onDelete: Cascade)
+  project     Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  incident    Incident? @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  contract    Contract? @relation(fields: [contractId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  type      String
+  title     String
+  message   String
+  data      String?  // JSON string
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}

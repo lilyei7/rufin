@@ -1,0 +1,252 @@
+import { NextRequest, NextResponse } from 'next/server';
+import prisma from '@/lib/prisma';
+import { getUserFromToken } from '@/lib/middleware';
+
+// GET - Listar contratos
+export async function GET(req: NextRequest) {
+  try {
+    const user = getUserFromToken(req);
+    if (!user) {
+      return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
+    }
+
+    const { searchParams } = new URL(req.url);
+    const type = searchParams.get('type');
+    const status = searchParams.get('status');
+
+    const where: any = {};
+
+    // Filtrar por tipo de contrato
+    if (type) {
+      where.type = type;
+    }
+
+    // Filtrar por estado
+    if (status) {
+      where.status = status;
+    }
+
+    // Filtrar por rol del usuario
+    if (user.role === 'vendor') {
+      where.vendorId = user.id;
+    } else if (user.role === 'installer') {
+      where.installerId = user.id;
+    }
+    // admin, super_admin y purchasing ven todos
+
+    const contracts = await prisma.contract.findMany({
+      where,
+      include: {
+        vendor: { select: { id: true, name: true, email: true } },
+        installer: { select: { id: true, name: true, email: true } },
+        client: true,
+        project: { select: { id: true, invoiceNumber: true } },
+        quote: { select: { id: true, quoteNumber: true } },
+        template: { select: { id: true, name: true } },
+        signatures: {
+          include: {
+            signer: { select: { id: true, name: true, email: true, role: true } }
+          }
+        },
+        communications: {
+          orderBy: { createdAt: 'desc' },
+          take: 5
+        }
+      },
+      orderBy: { createdAt: 'desc' }
+    });
+
+    return NextResponse.json({ contracts });
+  } catch (error: any) {
+    console.error('Error al obtener contratos:', error);
+    return NextResponse.json(
+      { error: 'Error al obtener contratos', details: error.message },
+      { status: 500 }
+    );
+  }
+}
+
+// POST - Crear nuevo contrato
+export async function POST(req: NextRequest) {
+  try {
+    const user = getUserFromToken(req);
+    if (!user) {
+      return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
+    }
+
+    // Solo admin, super_admin y purchasing pueden crear contratos
+    if (!['super_admin', 'admin', 'purchasing'].includes(user.role)) {
+      return NextResponse.json({ error: 'Sin permisos' }, { status: 403 });
+    }
+
+    const body = await req.json();
+    const {
+      contractNumber,
+      type,
+      title,
+      description,
+      content,
+      vendorId,
+      installerId,
+      clientId,
+      projectId,
+      quoteId,
+      templateId,
+      amount,
+      currency,
+      startDate,
+      endDate,
+      paymentTerms,
+      deliveryTerms,
+      penaltyClauses,
+      metadata
+    } = body;
+
+    // Validaciones
+    if (!title || !type || !content) {
+      return NextResponse.json(
+        { error: 'Faltan campos requeridos: title, type, content' },
+        { status: 400 }
+      );
+    }
+
+    // Generar número de contrato si no se proporciona
+    let finalContractNumber = contractNumber;
+    if (!finalContractNumber) {
+      const lastContract = await prisma.contract.findFirst({
+        orderBy: { id: 'desc' },
+        select: { id: true }
+      });
+      const nextId = (lastContract?.id || 0) + 1;
+      finalContractNumber = `CONT-${nextId.toString().padStart(5, '0')}`;
+    }
+
+    const contract = await prisma.contract.create({
+      data: {
+        contractNumber: finalContractNumber,
+        type,
+        title,
+        description,
+        content,
+        vendorId,
+        installerId,
+        clientId,
+        projectId,
+        quoteId,
+        templateId,
+        amount: amount ? parseFloat(amount) : null,
+        currency: currency || 'MXN',
+        startDate: startDate ? new Date(startDate) : null,
+        endDate: endDate ? new Date(endDate) : null,
+        paymentTerms,
+        deliveryTerms,
+        penaltyClauses,
+        metadata,
+        status: 'draft',
+        createdByUserId: user.id
+      },
+      include: {
+        vendor: { select: { id: true, name: true, email: true } },
+        installer: { select: { id: true, name: true, email: true } },
+        client: true,
+        template: true
+      }
+    });
+
+    // Registrar comunicación inicial
+    await prisma.communicationLog.create({
+      data: {
+        contractId: contract.id,
+        type: 'contract_created',
+        subject: `Contrato ${finalContractNumber} creado`,
+        message: `El contrato "${title}" ha sido creado y está en borrador.`,
+        sentByUserId: user.id,
+        status: 'sent'
+      }
+    });
+
+    return NextResponse.json({ contract }, { status: 201 });
+  } catch (error: any) {
+    console.error('Error al crear contrato:', error);
+    return NextResponse.json(
+      { error: 'Error al crear contrato', details: error.message },
+      { status: 500 }
+    );
+  }
+}
+
+// PATCH - Actualizar contrato
+export async function PATCH(req: NextRequest) {
+  try {
+    const user = getUserFromToken(req);
+    if (!user) {
+      return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
+    }
+
+    const body = await req.json();
+    const { id, ...updateData } = body;
+
+    if (!id) {
+      return NextResponse.json({ error: 'ID requerido' }, { status: 400 });
+    }
+
+    // Verificar que el contrato existe
+    const existingContract = await prisma.contract.findUnique({
+      where: { id: parseInt(id) }
+    });
+
+    if (!existingContract) {
+      return NextResponse.json({ error: 'Contrato no encontrado' }, { status: 404 });
+    }
+
+    // Solo admin, super_admin, purchasing o el creador pueden actualizar
+    if (
+      !['super_admin', 'admin', 'purchasing'].includes(user.role) &&
+      existingContract.createdByUserId !== user.id
+    ) {
+      return NextResponse.json({ error: 'Sin permisos' }, { status: 403 });
+    }
+
+    // No se puede editar un contrato firmado completamente
+    if (existingContract.status === 'signed' && updateData.content) {
+      return NextResponse.json(
+        { error: 'No se puede modificar el contenido de un contrato firmado' },
+        { status: 400 }
+      );
+    }
+
+    // Convertir fechas si vienen como string
+    if (updateData.startDate) {
+      updateData.startDate = new Date(updateData.startDate);
+    }
+    if (updateData.endDate) {
+      updateData.endDate = new Date(updateData.endDate);
+    }
+    if (updateData.amount) {
+      updateData.amount = parseFloat(updateData.amount);
+    }
+
+    const contract = await prisma.contract.update({
+      where: { id: parseInt(id) },
+      data: updateData,
+      include: {
+        vendor: { select: { id: true, name: true, email: true } },
+        installer: { select: { id: true, name: true, email: true } },
+        client: true,
+        signatures: {
+          include: {
+            signer: { select: { id: true, name: true, email: true, role: true } }
+          }
+        }
+      }
+    });
+
+    return NextResponse.json({ contract });
+  } catch (error: any) {
+    console.error('Error al actualizar contrato:', error);
+    return NextResponse.json(
+      { error: 'Error al actualizar contrato', details: error.message },
+      { status: 500 }
+    );
+  }
+}
